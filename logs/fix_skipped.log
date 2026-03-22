@@ -1,0 +1,394 @@
+2026-03-20 20:33:01,954  INFO      ============================================================
+2026-03-20 20:33:01,954  INFO      Phase 1: Auditing 47 skipped files
+2026-03-20 20:33:01,954  INFO      ============================================================
+2026-03-20 20:33:02,296  INFO      
+Issue: MULTIINDEX_HEADER — 47 files
+2026-03-20 20:33:02,297  INFO        ASX_ANZAX_1H_20240330_20260320.csv
+2026-03-20 20:33:02,297  INFO          cols=['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']  rows=3480
+2026-03-20 20:33:02,297  INFO        ASX_ANZAX_1W_20150101_20260320.csv
+2026-03-20 20:33:02,297  INFO          cols=['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']  rows=586
+2026-03-20 20:33:02,297  INFO        ASX_BHPAX_1H_20240330_20260320.csv
+2026-03-20 20:33:02,297  INFO          cols=['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']  rows=3477
+2026-03-20 20:33:02,297  INFO      
+============================================================
+2026-03-20 20:33:02,297  INFO      Phase 2: Fixing files
+2026-03-20 20:33:02,297  INFO      ============================================================
+2026-03-20 20:33:02,298  INFO      
+Fixing: ASX_ANZAX_1H_20240330_20260320.csv
+2026-03-20 20:33:02,333  INFO          Replacing 479 zero-volume rows with forward-filled values
+2026-03-20 20:33:02,335  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:02,386  INFO        [FIXED] ASX_ANZAX_1H_20240330_20260320.csv — 3480 rows saved
+2026-03-20 20:33:02,388  INFO      
+Fixing: ASX_ANZAX_1W_20150101_20260320.csv
+2026-03-20 20:33:02,402  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:02,412  INFO        [FIXED] ASX_ANZAX_1W_20150101_20260320.csv — 586 rows saved
+2026-03-20 20:33:02,412  INFO      
+Fixing: ASX_BHPAX_1H_20240330_20260320.csv
+2026-03-20 20:33:02,456  INFO          Replacing 477 zero-volume rows with forward-filled values
+2026-03-20 20:33:02,463  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:02,527  INFO        [FIXED] ASX_BHPAX_1H_20240330_20260320.csv — 3477 rows saved
+2026-03-20 20:33:02,527  INFO      
+Fixing: ASX_BHPAX_1W_20150101_20260320.csv
+2026-03-20 20:33:02,534  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:02,542  INFO        [FIXED] ASX_BHPAX_1W_20150101_20260320.csv — 586 rows saved
+2026-03-20 20:33:02,543  INFO      
+Fixing: ASX_CBAAX_1H_20240330_20260320.csv
+2026-03-20 20:33:02,570  INFO          Replacing 467 zero-volume rows with forward-filled values
+2026-03-20 20:33:02,573  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:02,659  INFO        [FIXED] ASX_CBAAX_1H_20240330_20260320.csv — 3462 rows saved
+2026-03-20 20:33:02,661  INFO      
+Fixing: ASX_CBAAX_1W_20150101_20260320.csv
+2026-03-20 20:33:02,670  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:02,674  INFO        [FIXED] ASX_CBAAX_1W_20150101_20260320.csv — 586 rows saved
+2026-03-20 20:33:02,674  INFO      
+Fixing: ASX_CSLAX_1H_20240330_20260320.csv
+2026-03-20 20:33:02,698  INFO          Replacing 474 zero-volume rows with forward-filled values
+2026-03-20 20:33:02,699  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:02,727  INFO        [FIXED] ASX_CSLAX_1H_20240330_20260320.csv — 3466 rows saved
+2026-03-20 20:33:02,728  INFO      
+Fixing: ASX_CSLAX_1W_20150101_20260320.csv
+2026-03-20 20:33:02,737  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:02,742  INFO        [FIXED] ASX_CSLAX_1W_20150101_20260320.csv — 586 rows saved
+2026-03-20 20:33:02,742  INFO      
+Fixing: ASX_WBCAX_1H_20240330_20260320.csv
+2026-03-20 20:33:02,757  INFO          Replacing 475 zero-volume rows with forward-filled values
+2026-03-20 20:33:02,758  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:02,787  INFO        [FIXED] ASX_WBCAX_1H_20240330_20260320.csv — 3469 rows saved
+2026-03-20 20:33:02,788  INFO      
+Fixing: ASX_WBCAX_1W_20150101_20260320.csv
+2026-03-20 20:33:02,797  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:02,802  INFO        [FIXED] ASX_WBCAX_1W_20150101_20260320.csv — 586 rows saved
+2026-03-20 20:33:02,802  INFO      
+Fixing: CRYPTO_BTC-USD_1H_20240330_20260320.csv
+2026-03-20 20:33:02,849  INFO          Replacing 8805 zero-volume rows with forward-filled values
+2026-03-20 20:33:02,851  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:02,959  INFO        [FIXED] CRYPTO_BTC-USD_1H_20240330_20260320.csv — 17124 rows saved
+2026-03-20 20:33:02,959  INFO      
+Fixing: CRYPTO_ETH-USD_1H_20240330_20260320.csv
+2026-03-20 20:33:03,006  INFO          Replacing 8736 zero-volume rows with forward-filled values
+2026-03-20 20:33:03,007  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:03,130  INFO        [FIXED] CRYPTO_ETH-USD_1H_20240330_20260320.csv — 17124 rows saved
+2026-03-20 20:33:03,130  INFO      
+Fixing: CRYPTO_ETH-USD_1W_20150101_20260320.csv
+2026-03-20 20:33:03,139  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:03,143  INFO        [FIXED] CRYPTO_ETH-USD_1W_20150101_20260320.csv — 437 rows saved
+2026-03-20 20:33:03,144  INFO      
+Fixing: DAX_GDAXI_1H_20240330_20260320.csv
+2026-03-20 20:33:03,166  INFO          Replacing 4489 zero-volume rows with forward-filled values
+2026-03-20 20:33:03,168  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:03,203  INFO        [FIXED] DAX_GDAXI_1H_20240330_20260320.csv — 4489 rows saved
+2026-03-20 20:33:03,203  INFO      
+Fixing: DAX_GDAXI_1W_20150101_20260320.csv
+2026-03-20 20:33:03,210  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:03,215  INFO        [FIXED] DAX_GDAXI_1W_20150101_20260320.csv — 586 rows saved
+2026-03-20 20:33:03,215  INFO      
+Fixing: EURONEXT_ASMLAS_1H_20240330_20260320.csv
+2026-03-20 20:33:03,233  INFO          Replacing 500 zero-volume rows with forward-filled values
+2026-03-20 20:33:03,234  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:03,270  INFO        [FIXED] EURONEXT_ASMLAS_1H_20240330_20260320.csv — 4515 rows saved
+2026-03-20 20:33:03,270  INFO      
+Fixing: EURONEXT_ASMLAS_1W_20150101_20260320.csv
+2026-03-20 20:33:03,278  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:03,285  INFO        [FIXED] EURONEXT_ASMLAS_1W_20150101_20260320.csv — 586 rows saved
+2026-03-20 20:33:03,285  INFO      
+Fixing: EURONEXT_MCPA_1H_20240330_20260320.csv
+2026-03-20 20:33:03,317  INFO          Replacing 498 zero-volume rows with forward-filled values
+2026-03-20 20:33:03,319  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:03,367  INFO        [FIXED] EURONEXT_MCPA_1H_20240330_20260320.csv — 4515 rows saved
+2026-03-20 20:33:03,368  INFO      
+Fixing: EURONEXT_MCPA_1W_20150101_20260320.csv
+2026-03-20 20:33:03,375  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:03,380  INFO        [FIXED] EURONEXT_MCPA_1W_20150101_20260320.csv — 586 rows saved
+2026-03-20 20:33:03,380  INFO      
+Fixing: EURONEXT_SAPDE_1H_20240330_20260320.csv
+2026-03-20 20:33:03,402  INFO          Replacing 458 zero-volume rows with forward-filled values
+2026-03-20 20:33:03,404  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:03,439  INFO        [FIXED] EURONEXT_SAPDE_1H_20240330_20260320.csv — 4483 rows saved
+2026-03-20 20:33:03,439  INFO      
+Fixing: EURONEXT_SAPDE_1W_20150101_20260320.csv
+2026-03-20 20:33:03,446  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:03,451  INFO        [FIXED] EURONEXT_SAPDE_1W_20150101_20260320.csv — 586 rows saved
+2026-03-20 20:33:03,452  INFO      
+Fixing: EURONEXT_SIEDE_1H_20240330_20260320.csv
+2026-03-20 20:33:03,470  INFO          Replacing 460 zero-volume rows with forward-filled values
+2026-03-20 20:33:03,472  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:03,512  INFO        [FIXED] EURONEXT_SIEDE_1H_20240330_20260320.csv — 4483 rows saved
+2026-03-20 20:33:03,512  INFO      
+Fixing: EURONEXT_SIEDE_1W_20150101_20260320.csv
+2026-03-20 20:33:03,532  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:03,546  INFO        [FIXED] EURONEXT_SIEDE_1W_20150101_20260320.csv — 586 rows saved
+2026-03-20 20:33:03,547  INFO      
+Fixing: EURONEXT_TTEPA_1H_20240330_20260320.csv
+2026-03-20 20:33:03,567  INFO          Replacing 497 zero-volume rows with forward-filled values
+2026-03-20 20:33:03,569  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:03,605  INFO        [FIXED] EURONEXT_TTEPA_1H_20240330_20260320.csv — 4515 rows saved
+2026-03-20 20:33:03,605  INFO      
+Fixing: EURONEXT_TTEPA_1W_20150101_20260320.csv
+2026-03-20 20:33:03,613  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:03,617  INFO        [FIXED] EURONEXT_TTEPA_1W_20150101_20260320.csv — 586 rows saved
+2026-03-20 20:33:03,618  INFO      
+Fixing: FOREXCOM_AUDNZDX_1H_20240330_20260320.csv
+2026-03-20 20:33:03,658  INFO          Replacing 12227 zero-volume rows with forward-filled values
+2026-03-20 20:33:03,659  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:03,757  INFO        [FIXED] FOREXCOM_AUDNZDX_1H_20240330_20260320.csv — 12227 rows saved
+2026-03-20 20:33:03,757  INFO      
+Fixing: FOREXCOM_AUDUSDX_1H_20240330_20260320.csv
+2026-03-20 20:33:03,792  INFO          Replacing 12229 zero-volume rows with forward-filled values
+2026-03-20 20:33:03,793  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:03,879  INFO        [FIXED] FOREXCOM_AUDUSDX_1H_20240330_20260320.csv — 12229 rows saved
+2026-03-20 20:33:03,880  INFO      
+Fixing: FOREXCOM_EURCHFX_1H_20240330_20260320.csv
+2026-03-20 20:33:03,913  INFO          Replacing 12174 zero-volume rows with forward-filled values
+2026-03-20 20:33:03,914  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:03,996  INFO        [FIXED] FOREXCOM_EURCHFX_1H_20240330_20260320.csv — 12174 rows saved
+2026-03-20 20:33:03,996  INFO      
+Fixing: FOREXCOM_EURGBPX_1H_20240330_20260320.csv
+2026-03-20 20:33:04,032  INFO          Replacing 12186 zero-volume rows with forward-filled values
+2026-03-20 20:33:04,033  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:04,138  INFO        [FIXED] FOREXCOM_EURGBPX_1H_20240330_20260320.csv — 12186 rows saved
+2026-03-20 20:33:04,138  INFO      
+Fixing: FOREXCOM_EURUSDX_1H_20240330_20260320.csv
+2026-03-20 20:33:04,195  INFO          Replacing 12167 zero-volume rows with forward-filled values
+2026-03-20 20:33:04,196  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:04,323  INFO        [FIXED] FOREXCOM_EURUSDX_1H_20240330_20260320.csv — 12167 rows saved
+2026-03-20 20:33:04,323  INFO      
+Fixing: FOREXCOM_GBPJPYX_1H_20240330_20260320.csv
+2026-03-20 20:33:04,393  INFO          Replacing 12175 zero-volume rows with forward-filled values
+2026-03-20 20:33:04,395  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:04,537  INFO        [FIXED] FOREXCOM_GBPJPYX_1H_20240330_20260320.csv — 12175 rows saved
+2026-03-20 20:33:04,538  INFO      
+Fixing: FOREXCOM_GBPUSDX_1H_20240330_20260320.csv
+2026-03-20 20:33:04,572  INFO          Replacing 12169 zero-volume rows with forward-filled values
+2026-03-20 20:33:04,574  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:04,655  INFO        [FIXED] FOREXCOM_GBPUSDX_1H_20240330_20260320.csv — 12169 rows saved
+2026-03-20 20:33:04,655  INFO      
+Fixing: FOREXCOM_USDCADX_1H_20240330_20260320.csv
+2026-03-20 20:33:04,749  INFO          Replacing 12238 zero-volume rows with forward-filled values
+2026-03-20 20:33:04,751  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:04,856  INFO        [FIXED] FOREXCOM_USDCADX_1H_20240330_20260320.csv — 12238 rows saved
+2026-03-20 20:33:04,857  INFO      
+Fixing: FOREXCOM_USDCHFX_1H_20240330_20260320.csv
+2026-03-20 20:33:04,892  INFO          Replacing 12124 zero-volume rows with forward-filled values
+2026-03-20 20:33:04,893  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:04,973  INFO        [FIXED] FOREXCOM_USDCHFX_1H_20240330_20260320.csv — 12124 rows saved
+2026-03-20 20:33:04,973  INFO      
+Fixing: FOREXCOM_USDJPYX_1H_20240330_20260320.csv
+2026-03-20 20:33:05,008  INFO          Replacing 12084 zero-volume rows with forward-filled values
+2026-03-20 20:33:05,009  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:05,091  INFO        [FIXED] FOREXCOM_USDJPYX_1H_20240330_20260320.csv — 12084 rows saved
+2026-03-20 20:33:05,091  INFO      
+Fixing: FTSE_FTSE_1H_20240330_20260320.csv
+2026-03-20 20:33:05,110  INFO          Replacing 4468 zero-volume rows with forward-filled values
+2026-03-20 20:33:05,110  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:05,141  INFO        [FIXED] FTSE_FTSE_1H_20240330_20260320.csv — 4468 rows saved
+2026-03-20 20:33:05,142  INFO      
+Fixing: HSI_HSI_1H_20240330_20260320.csv
+2026-03-20 20:33:05,160  INFO          Replacing 3345 zero-volume rows with forward-filled values
+2026-03-20 20:33:05,161  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:05,193  INFO        [FIXED] HSI_HSI_1H_20240330_20260320.csv — 3345 rows saved
+2026-03-20 20:33:05,193  INFO      
+Fixing: HSI_HSI_1W_20150101_20260320.csv
+2026-03-20 20:33:05,205  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:05,212  INFO        [FIXED] HSI_HSI_1W_20150101_20260320.csv — 586 rows saved
+2026-03-20 20:33:05,213  INFO      
+Fixing: HSI_HSI_4H_20240330_20260320.csv
+2026-03-20 20:33:05,224  INFO          Replacing 959 zero-volume rows with forward-filled values
+2026-03-20 20:33:05,225  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:05,237  INFO        [FIXED] HSI_HSI_4H_20240330_20260320.csv — 959 rows saved
+2026-03-20 20:33:05,237  INFO      
+Fixing: LSE_AZNL_1H_20240330_20260320.csv
+2026-03-20 20:33:05,263  INFO          Replacing 384 zero-volume rows with forward-filled values
+2026-03-20 20:33:05,265  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:05,295  INFO        [FIXED] LSE_AZNL_1H_20240330_20260320.csv — 4471 rows saved
+2026-03-20 20:33:05,295  INFO      
+Fixing: LSE_BPL_1H_20240330_20260320.csv
+2026-03-20 20:33:05,314  INFO          Replacing 350 zero-volume rows with forward-filled values
+2026-03-20 20:33:05,315  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:05,345  INFO        [FIXED] LSE_BPL_1H_20240330_20260320.csv — 4471 rows saved
+2026-03-20 20:33:05,346  INFO      
+Fixing: LSE_GSKL_1H_20240330_20260320.csv
+2026-03-20 20:33:05,363  INFO          Replacing 402 zero-volume rows with forward-filled values
+2026-03-20 20:33:05,364  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:05,387  INFO        [FIXED] LSE_GSKL_1H_20240330_20260320.csv — 4471 rows saved
+2026-03-20 20:33:05,387  INFO      
+Fixing: LSE_HSBAL_1H_20240330_20260320.csv
+2026-03-20 20:33:05,405  INFO          Replacing 356 zero-volume rows with forward-filled values
+2026-03-20 20:33:05,409  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:05,446  INFO        [FIXED] LSE_HSBAL_1H_20240330_20260320.csv — 4471 rows saved
+2026-03-20 20:33:05,446  INFO      
+Fixing: LSE_SHELL_1H_20240330_20260320.csv
+2026-03-20 20:33:05,463  INFO          Replacing 387 zero-volume rows with forward-filled values
+2026-03-20 20:33:05,464  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:05,484  INFO        [FIXED] LSE_SHELL_1H_20240330_20260320.csv — 4471 rows saved
+2026-03-20 20:33:05,485  INFO      
+Fixing: NIKKEI_N225_1H_20240330_20260320.csv
+2026-03-20 20:33:05,502  INFO          Replacing 3355 zero-volume rows with forward-filled values
+2026-03-20 20:33:05,503  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:05,523  INFO        [FIXED] NIKKEI_N225_1H_20240330_20260320.csv — 3355 rows saved
+2026-03-20 20:33:05,523  INFO      
+Fixing: NIKKEI_N225_1W_20150101_20260320.csv
+2026-03-20 20:33:05,530  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:05,537  INFO        [FIXED] NIKKEI_N225_1W_20150101_20260320.csv — 584 rows saved
+2026-03-20 20:33:05,538  INFO      
+Fixing: NIKKEI_N225_4H_20240330_20260320.csv
+2026-03-20 20:33:05,547  INFO          Replacing 962 zero-volume rows with forward-filled values
+2026-03-20 20:33:05,547  INFO          Fixed columns: ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume'] → ['Datetime', 'Open', 'High', 'Low', 'Close', 'Volume']
+2026-03-20 20:33:05,554  INFO        [FIXED] NIKKEI_N225_4H_20240330_20260320.csv — 962 rows saved
+2026-03-20 20:33:05,554  INFO      
+============================================================
+2026-03-20 20:33:05,554  INFO      Fix summary
+2026-03-20 20:33:05,554  INFO      ============================================================
+2026-03-20 20:33:05,554  INFO        Fixed successfully : 47
+2026-03-20 20:33:05,554  INFO        Failed to fix      : 0
+2026-03-20 20:33:05,554  INFO        Missing files      : 0
+2026-03-20 20:33:05,554  INFO      
+============================================================
+2026-03-20 20:33:05,554  INFO      Phase 3: Re-running feature engineering on fixed files
+2026-03-20 20:33:05,554  INFO      ============================================================
+2026-03-20 20:33:05,573  INFO      [IDX]  Loaded index ref for 1D: SP500_GSPC_1D_20150101_20260320.csv
+2026-03-20 20:33:05,579  INFO      [IDX]  Loaded index ref for 1W: SP500_GSPC_1W_20150101_20260320.csv
+2026-03-20 20:33:05,601  INFO      [IDX]  Loaded index ref for 1H: SP500_GSPC_1H_20240330_20260320.csv
+2026-03-20 20:33:05,609  INFO      [IDX]  Loaded index ref for 4H: SP500_GSPC_4H_20240330_20260320.csv
+2026-03-20 20:33:05,609  INFO      [PROC] ASX_ANZAX_1H_20240330_20260320.csv
+2026-03-20 20:33:05,781  WARNING     ✗  No valid windows produced for ASX_ANZAX_1H_20240330_20260320.csv
+2026-03-20 20:33:05,781  WARNING     Still no output for ASX_ANZAX_1H_20240330_20260320.csv after fix
+2026-03-20 20:33:05,781  INFO      [PROC] ASX_ANZAX_1W_20150101_20260320.csv
+2026-03-20 20:33:05,912  WARNING     ✗  No valid windows produced for ASX_ANZAX_1W_20150101_20260320.csv
+2026-03-20 20:33:05,913  WARNING     Still no output for ASX_ANZAX_1W_20150101_20260320.csv after fix
+2026-03-20 20:33:05,913  INFO      [PROC] ASX_BHPAX_1H_20240330_20260320.csv
+2026-03-20 20:33:06,064  WARNING     ✗  No valid windows produced for ASX_BHPAX_1H_20240330_20260320.csv
+2026-03-20 20:33:06,065  WARNING     Still no output for ASX_BHPAX_1H_20240330_20260320.csv after fix
+2026-03-20 20:33:06,065  INFO      [PROC] ASX_BHPAX_1W_20150101_20260320.csv
+2026-03-20 20:33:06,141  WARNING     ✗  No valid windows produced for ASX_BHPAX_1W_20150101_20260320.csv
+2026-03-20 20:33:06,142  WARNING     Still no output for ASX_BHPAX_1W_20150101_20260320.csv after fix
+2026-03-20 20:33:06,142  INFO      [PROC] ASX_CBAAX_1H_20240330_20260320.csv
+2026-03-20 20:33:06,296  WARNING     ✗  No valid windows produced for ASX_CBAAX_1H_20240330_20260320.csv
+2026-03-20 20:33:06,296  WARNING     Still no output for ASX_CBAAX_1H_20240330_20260320.csv after fix
+2026-03-20 20:33:06,296  INFO      [PROC] ASX_CBAAX_1W_20150101_20260320.csv
+2026-03-20 20:33:06,369  WARNING     ✗  No valid windows produced for ASX_CBAAX_1W_20150101_20260320.csv
+2026-03-20 20:33:06,369  WARNING     Still no output for ASX_CBAAX_1W_20150101_20260320.csv after fix
+2026-03-20 20:33:06,369  INFO      [PROC] ASX_CSLAX_1H_20240330_20260320.csv
+2026-03-20 20:33:06,521  WARNING     ✗  No valid windows produced for ASX_CSLAX_1H_20240330_20260320.csv
+2026-03-20 20:33:06,521  WARNING     Still no output for ASX_CSLAX_1H_20240330_20260320.csv after fix
+2026-03-20 20:33:06,521  INFO      [PROC] ASX_CSLAX_1W_20150101_20260320.csv
+2026-03-20 20:33:06,596  WARNING     ✗  No valid windows produced for ASX_CSLAX_1W_20150101_20260320.csv
+2026-03-20 20:33:06,596  WARNING     Still no output for ASX_CSLAX_1W_20150101_20260320.csv after fix
+2026-03-20 20:33:06,596  INFO      [PROC] ASX_WBCAX_1H_20240330_20260320.csv
+2026-03-20 20:33:06,753  WARNING     ✗  No valid windows produced for ASX_WBCAX_1H_20240330_20260320.csv
+2026-03-20 20:33:06,754  WARNING     Still no output for ASX_WBCAX_1H_20240330_20260320.csv after fix
+2026-03-20 20:33:06,754  INFO      [PROC] ASX_WBCAX_1W_20150101_20260320.csv
+2026-03-20 20:33:06,890  WARNING     ✗  No valid windows produced for ASX_WBCAX_1W_20150101_20260320.csv
+2026-03-20 20:33:06,891  WARNING     Still no output for ASX_WBCAX_1W_20150101_20260320.csv after fix
+2026-03-20 20:33:06,892  INFO      [PROC] CRYPTO_BTC-USD_1H_20240330_20260320.csv
+2026-03-20 20:33:07,431  WARNING     ✗  No valid windows produced for CRYPTO_BTC-USD_1H_20240330_20260320.csv
+2026-03-20 20:33:07,431  WARNING     Still no output for CRYPTO_BTC-USD_1H_20240330_20260320.csv after fix
+2026-03-20 20:33:07,431  INFO      [PROC] CRYPTO_ETH-USD_1H_20240330_20260320.csv
+2026-03-20 20:33:07,994  WARNING     ✗  No valid windows produced for CRYPTO_ETH-USD_1H_20240330_20260320.csv
+2026-03-20 20:33:07,994  WARNING     Still no output for CRYPTO_ETH-USD_1H_20240330_20260320.csv after fix
+2026-03-20 20:33:07,995  INFO      [PROC] CRYPTO_ETH-USD_1W_20150101_20260320.csv
+2026-03-20 20:33:08,064  WARNING     ✗  No valid windows produced for CRYPTO_ETH-USD_1W_20150101_20260320.csv
+2026-03-20 20:33:08,064  WARNING     Still no output for CRYPTO_ETH-USD_1W_20150101_20260320.csv after fix
+2026-03-20 20:33:08,064  INFO      [PROC] DAX_GDAXI_1H_20240330_20260320.csv
+2026-03-20 20:33:08,238  WARNING     ✗  No valid windows produced for DAX_GDAXI_1H_20240330_20260320.csv
+2026-03-20 20:33:08,238  WARNING     Still no output for DAX_GDAXI_1H_20240330_20260320.csv after fix
+2026-03-20 20:33:08,238  INFO      [PROC] DAX_GDAXI_1W_20150101_20260320.csv
+2026-03-20 20:33:08,312  WARNING     ✗  No valid windows produced for DAX_GDAXI_1W_20150101_20260320.csv
+2026-03-20 20:33:08,312  WARNING     Still no output for DAX_GDAXI_1W_20150101_20260320.csv after fix
+2026-03-20 20:33:08,312  INFO      [PROC] EURONEXT_ASMLAS_1H_20240330_20260320.csv
+2026-03-20 20:33:08,516  WARNING     ✗  No valid windows produced for EURONEXT_ASMLAS_1H_20240330_20260320.csv
+2026-03-20 20:33:08,516  WARNING     Still no output for EURONEXT_ASMLAS_1H_20240330_20260320.csv after fix
+2026-03-20 20:33:08,516  INFO      [PROC] EURONEXT_ASMLAS_1W_20150101_20260320.csv
+2026-03-20 20:33:08,590  WARNING     ✗  No valid windows produced for EURONEXT_ASMLAS_1W_20150101_20260320.csv
+2026-03-20 20:33:08,590  WARNING     Still no output for EURONEXT_ASMLAS_1W_20150101_20260320.csv after fix
+2026-03-20 20:33:08,590  INFO      [PROC] EURONEXT_MCPA_1H_20240330_20260320.csv
+2026-03-20 20:33:08,774  WARNING     ✗  No valid windows produced for EURONEXT_MCPA_1H_20240330_20260320.csv
+2026-03-20 20:33:08,774  WARNING     Still no output for EURONEXT_MCPA_1H_20240330_20260320.csv after fix
+2026-03-20 20:33:08,774  INFO      [PROC] EURONEXT_MCPA_1W_20150101_20260320.csv
+2026-03-20 20:33:08,848  WARNING     ✗  No valid windows produced for EURONEXT_MCPA_1W_20150101_20260320.csv
+2026-03-20 20:33:08,848  WARNING     Still no output for EURONEXT_MCPA_1W_20150101_20260320.csv after fix
+2026-03-20 20:33:08,849  INFO      [PROC] EURONEXT_SAPDE_1H_20240330_20260320.csv
+2026-03-20 20:33:09,069  WARNING     ✗  No valid windows produced for EURONEXT_SAPDE_1H_20240330_20260320.csv
+2026-03-20 20:33:09,070  WARNING     Still no output for EURONEXT_SAPDE_1H_20240330_20260320.csv after fix
+2026-03-20 20:33:09,070  INFO      [PROC] EURONEXT_SAPDE_1W_20150101_20260320.csv
+2026-03-20 20:33:09,143  WARNING     ✗  No valid windows produced for EURONEXT_SAPDE_1W_20150101_20260320.csv
+2026-03-20 20:33:09,144  WARNING     Still no output for EURONEXT_SAPDE_1W_20150101_20260320.csv after fix
+2026-03-20 20:33:09,144  INFO      [PROC] EURONEXT_SIEDE_1H_20240330_20260320.csv
+2026-03-20 20:33:09,381  WARNING     ✗  No valid windows produced for EURONEXT_SIEDE_1H_20240330_20260320.csv
+2026-03-20 20:33:09,381  WARNING     Still no output for EURONEXT_SIEDE_1H_20240330_20260320.csv after fix
+2026-03-20 20:33:09,381  INFO      [PROC] EURONEXT_SIEDE_1W_20150101_20260320.csv
+2026-03-20 20:33:09,457  WARNING     ✗  No valid windows produced for EURONEXT_SIEDE_1W_20150101_20260320.csv
+2026-03-20 20:33:09,457  WARNING     Still no output for EURONEXT_SIEDE_1W_20150101_20260320.csv after fix
+2026-03-20 20:33:09,457  INFO      [PROC] EURONEXT_TTEPA_1H_20240330_20260320.csv
+2026-03-20 20:33:09,634  WARNING     ✗  No valid windows produced for EURONEXT_TTEPA_1H_20240330_20260320.csv
+2026-03-20 20:33:09,635  WARNING     Still no output for EURONEXT_TTEPA_1H_20240330_20260320.csv after fix
+2026-03-20 20:33:09,635  INFO      [PROC] EURONEXT_TTEPA_1W_20150101_20260320.csv
+2026-03-20 20:33:09,711  WARNING     ✗  No valid windows produced for EURONEXT_TTEPA_1W_20150101_20260320.csv
+2026-03-20 20:33:09,711  WARNING     Still no output for EURONEXT_TTEPA_1W_20150101_20260320.csv after fix
+2026-03-20 20:33:09,711  INFO      [PROC] FOREXCOM_AUDNZDX_1H_20240330_20260320.csv
+2026-03-20 20:33:10,082  WARNING     ✗  No valid windows produced for FOREXCOM_AUDNZDX_1H_20240330_20260320.csv
+2026-03-20 20:33:10,083  WARNING     Still no output for FOREXCOM_AUDNZDX_1H_20240330_20260320.csv after fix
+2026-03-20 20:33:10,083  INFO      [PROC] FOREXCOM_AUDUSDX_1H_20240330_20260320.csv
+2026-03-20 20:33:10,495  WARNING     ✗  No valid windows produced for FOREXCOM_AUDUSDX_1H_20240330_20260320.csv
+2026-03-20 20:33:10,496  WARNING     Still no output for FOREXCOM_AUDUSDX_1H_20240330_20260320.csv after fix
+2026-03-20 20:33:10,496  INFO      [PROC] FOREXCOM_EURCHFX_1H_20240330_20260320.csv
+2026-03-20 20:33:10,895  WARNING     ✗  No valid windows produced for FOREXCOM_EURCHFX_1H_20240330_20260320.csv
+2026-03-20 20:33:10,896  WARNING     Still no output for FOREXCOM_EURCHFX_1H_20240330_20260320.csv after fix
+2026-03-20 20:33:10,896  INFO      [PROC] FOREXCOM_EURGBPX_1H_20240330_20260320.csv
+2026-03-20 20:33:11,320  WARNING     ✗  No valid windows produced for FOREXCOM_EURGBPX_1H_20240330_20260320.csv
+2026-03-20 20:33:11,321  WARNING     Still no output for FOREXCOM_EURGBPX_1H_20240330_20260320.csv after fix
+2026-03-20 20:33:11,321  INFO      [PROC] FOREXCOM_EURUSDX_1H_20240330_20260320.csv
+2026-03-20 20:33:11,678  WARNING     ✗  No valid windows produced for FOREXCOM_EURUSDX_1H_20240330_20260320.csv
+2026-03-20 20:33:11,679  WARNING     Still no output for FOREXCOM_EURUSDX_1H_20240330_20260320.csv after fix
+2026-03-20 20:33:11,680  INFO      [PROC] FOREXCOM_GBPJPYX_1H_20240330_20260320.csv
+2026-03-20 20:33:12,059  WARNING     ✗  No valid windows produced for FOREXCOM_GBPJPYX_1H_20240330_20260320.csv
+2026-03-20 20:33:12,060  WARNING     Still no output for FOREXCOM_GBPJPYX_1H_20240330_20260320.csv after fix
+2026-03-20 20:33:12,060  INFO      [PROC] FOREXCOM_GBPUSDX_1H_20240330_20260320.csv
+2026-03-20 20:33:12,413  WARNING     ✗  No valid windows produced for FOREXCOM_GBPUSDX_1H_20240330_20260320.csv
+2026-03-20 20:33:12,414  WARNING     Still no output for FOREXCOM_GBPUSDX_1H_20240330_20260320.csv after fix
+2026-03-20 20:33:12,414  INFO      [PROC] FOREXCOM_USDCADX_1H_20240330_20260320.csv
+2026-03-20 20:33:12,786  WARNING     ✗  No valid windows produced for FOREXCOM_USDCADX_1H_20240330_20260320.csv
+2026-03-20 20:33:12,787  WARNING     Still no output for FOREXCOM_USDCADX_1H_20240330_20260320.csv after fix
+2026-03-20 20:33:12,787  INFO      [PROC] FOREXCOM_USDCHFX_1H_20240330_20260320.csv
+2026-03-20 20:33:13,265  WARNING     ✗  No valid windows produced for FOREXCOM_USDCHFX_1H_20240330_20260320.csv
+2026-03-20 20:33:13,266  WARNING     Still no output for FOREXCOM_USDCHFX_1H_20240330_20260320.csv after fix
+2026-03-20 20:33:13,266  INFO      [PROC] FOREXCOM_USDJPYX_1H_20240330_20260320.csv
+2026-03-20 20:33:13,689  WARNING     ✗  No valid windows produced for FOREXCOM_USDJPYX_1H_20240330_20260320.csv
+2026-03-20 20:33:13,690  WARNING     Still no output for FOREXCOM_USDJPYX_1H_20240330_20260320.csv after fix
+2026-03-20 20:33:13,690  INFO      [PROC] FTSE_FTSE_1H_20240330_20260320.csv
+2026-03-20 20:33:13,866  WARNING     ✗  No valid windows produced for FTSE_FTSE_1H_20240330_20260320.csv
+2026-03-20 20:33:13,866  WARNING     Still no output for FTSE_FTSE_1H_20240330_20260320.csv after fix
+2026-03-20 20:33:13,866  INFO      [PROC] HSI_HSI_1H_20240330_20260320.csv
+2026-03-20 20:33:14,013  WARNING     ✗  No valid windows produced for HSI_HSI_1H_20240330_20260320.csv
+2026-03-20 20:33:14,013  WARNING     Still no output for HSI_HSI_1H_20240330_20260320.csv after fix
+2026-03-20 20:33:14,014  INFO      [PROC] HSI_HSI_1W_20150101_20260320.csv
+2026-03-20 20:33:14,090  WARNING     ✗  No valid windows produced for HSI_HSI_1W_20150101_20260320.csv
+2026-03-20 20:33:14,090  WARNING     Still no output for HSI_HSI_1W_20150101_20260320.csv after fix
+2026-03-20 20:33:14,090  INFO      [PROC] HSI_HSI_4H_20240330_20260320.csv
+2026-03-20 20:33:14,182  WARNING     ✗  No valid windows produced for HSI_HSI_4H_20240330_20260320.csv
+2026-03-20 20:33:14,182  WARNING     Still no output for HSI_HSI_4H_20240330_20260320.csv after fix
+2026-03-20 20:33:14,182  INFO      [PROC] LSE_AZNL_1H_20240330_20260320.csv
+2026-03-20 20:33:14,356  WARNING     ✗  No valid windows produced for LSE_AZNL_1H_20240330_20260320.csv
+2026-03-20 20:33:14,356  WARNING     Still no output for LSE_AZNL_1H_20240330_20260320.csv after fix
+2026-03-20 20:33:14,357  INFO      [PROC] LSE_BPL_1H_20240330_20260320.csv
+2026-03-20 20:33:14,552  WARNING     ✗  No valid windows produced for LSE_BPL_1H_20240330_20260320.csv
+2026-03-20 20:33:14,553  WARNING     Still no output for LSE_BPL_1H_20240330_20260320.csv after fix
+2026-03-20 20:33:14,553  INFO      [PROC] LSE_GSKL_1H_20240330_20260320.csv
+2026-03-20 20:33:14,816  WARNING     ✗  No valid windows produced for LSE_GSKL_1H_20240330_20260320.csv
+2026-03-20 20:33:14,816  WARNING     Still no output for LSE_GSKL_1H_20240330_20260320.csv after fix
+2026-03-20 20:33:14,816  INFO      [PROC] LSE_HSBAL_1H_20240330_20260320.csv
+2026-03-20 20:33:14,994  WARNING     ✗  No valid windows produced for LSE_HSBAL_1H_20240330_20260320.csv
+2026-03-20 20:33:14,994  WARNING     Still no output for LSE_HSBAL_1H_20240330_20260320.csv after fix
+2026-03-20 20:33:14,994  INFO      [PROC] LSE_SHELL_1H_20240330_20260320.csv
+2026-03-20 20:33:15,169  WARNING     ✗  No valid windows produced for LSE_SHELL_1H_20240330_20260320.csv
+2026-03-20 20:33:15,169  WARNING     Still no output for LSE_SHELL_1H_20240330_20260320.csv after fix
+2026-03-20 20:33:15,169  INFO      [PROC] NIKKEI_N225_1H_20240330_20260320.csv
+2026-03-20 20:33:15,375  WARNING     ✗  No valid windows produced for NIKKEI_N225_1H_20240330_20260320.csv
+2026-03-20 20:33:15,375  WARNING     Still no output for NIKKEI_N225_1H_20240330_20260320.csv after fix
+2026-03-20 20:33:15,375  INFO      [PROC] NIKKEI_N225_1W_20150101_20260320.csv
+2026-03-20 20:33:15,484  WARNING     ✗  No valid windows produced for NIKKEI_N225_1W_20150101_20260320.csv
+2026-03-20 20:33:15,485  WARNING     Still no output for NIKKEI_N225_1W_20150101_20260320.csv after fix
+2026-03-20 20:33:15,485  INFO      [PROC] NIKKEI_N225_4H_20240330_20260320.csv
+2026-03-20 20:33:15,580  WARNING     ✗  No valid windows produced for NIKKEI_N225_4H_20240330_20260320.csv
+2026-03-20 20:33:15,580  WARNING     Still no output for NIKKEI_N225_4H_20240330_20260320.csv after fix
+2026-03-20 20:33:15,580  INFO      
+Re-processed 0 / 47 fixed files
