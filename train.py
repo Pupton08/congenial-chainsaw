@@ -330,15 +330,17 @@ class EarlyStopping:
         self.patience    = patience
         self.min_delta   = min_delta
         self.best_loss   = float("inf")
+        self.best_acc    = {}   # val accuracies at best checkpoint epoch
         self.counter     = 0
         self.best_state  = None
         self.stopped     = False
 
-    def step(self, val_loss: float, model: nn.Module) -> bool:
+    def step(self, val_loss: float, val_acc: dict, model: nn.Module) -> bool:
         """Returns True if training should stop."""
         improvement = self.best_loss - val_loss
         if improvement > self.min_delta:
             self.best_loss  = val_loss
+            self.best_acc   = val_acc.copy()
             self.counter    = 0
             # Deep copy state dict
             self.best_state = {k: v.cpu().clone() for k, v in model.state_dict().items()}
@@ -353,7 +355,11 @@ class EarlyStopping:
     def restore_best(self, model: nn.Module):
         if self.best_state is not None:
             model.load_state_dict(self.best_state)
-            log.info("  Restored best weights (val_loss=%.4f)", self.best_loss)
+            log.info("  Restored best weights (val_loss=%.4f  H1=%.3f H5=%.3f H20=%.3f)",
+                     self.best_loss,
+                     self.best_acc.get("acc_h1", 0),
+                     self.best_acc.get("acc_h5", 0),
+                     self.best_acc.get("acc_h20", 0))
 
 
 # ─── Per-fold training ────────────────────────────────────────────────────────
@@ -484,7 +490,7 @@ def train_fold(fold_n: int, device: str) -> dict:
             )
 
         # ── Early stopping ────────────────────────────────────────
-        if stopper.step(val_metrics["loss"], model):
+        if stopper.step(val_metrics["loss"], val_metrics, model):
             log.info(
                 "  Early stopping at epoch %d (no improvement for %d epochs).",
                 epoch, PATIENCE
@@ -515,7 +521,8 @@ def train_fold(fold_n: int, device: str) -> dict:
         "best_val_loss": stopper.best_loss,
         "epochs_run":    len(epoch_records),
         "checkpoint":    ckpt_path,
-        "final_val_acc": val_metrics["mean_acc"],
+        "final_val_acc": np.mean(list(stopper.best_acc.values())) if stopper.best_acc else val_metrics["mean_acc"],
+        "best_val_accs": stopper.best_acc,
     }
 
 
@@ -546,13 +553,36 @@ def main():
         ckpt_path = os.path.join(MODELS_DIR, f"checkpoint_fold_{fold_n}.pt")
         if os.path.exists(ckpt_path):
             log.info("Fold %d checkpoint already exists — skipping.", fold_n)
-            ckpt = torch.load(ckpt_path, map_location="cpu")
+            ckpt = torch.load(ckpt_path, map_location="cpu", weights_only=True)
+
+            # Try to recover best accuracies from saved metrics CSV
+            best_accs = {}
+            metrics_csv = os.path.join(LOG_DIR, f"fold_{fold_n}_metrics.csv")
+            if os.path.exists(metrics_csv):
+                mdf = pd.read_csv(metrics_csv)
+                # Best epoch = row with lowest val_loss
+                best_row = mdf.loc[mdf["val_loss"].idxmin()]
+                best_accs = {
+                    "acc_h1":  best_row.get("val_acc_h1",  0.0),
+                    "acc_h5":  best_row.get("val_acc_h5",  0.0),
+                    "acc_h20": best_row.get("val_acc_h20", 0.0),
+                }
+                mean_acc = float(np.mean([best_accs["acc_h1"],
+                                          best_accs["acc_h5"],
+                                          best_accs["acc_h20"]]))
+                log.info("  Recovered from metrics CSV — H1=%.3f H5=%.3f H20=%.3f",
+                         best_accs["acc_h1"], best_accs["acc_h5"], best_accs["acc_h20"])
+            else:
+                mean_acc = 0.0
+                log.warning("  No metrics CSV found for fold %d — val_acc unknown", fold_n)
+
             fold_results.append({
                 "fold":          fold_n,
                 "best_val_loss": ckpt.get("val_loss", float("nan")),
                 "epochs_run":    ckpt.get("epoch_stopped", 0),
                 "checkpoint":    ckpt_path,
-                "final_val_acc": 0.0,
+                "final_val_acc": mean_acc,
+                "best_val_accs": best_accs,
             })
             continue
         result = train_fold(fold_n, device)
@@ -571,9 +601,12 @@ def main():
     val_accs   = [r["final_val_acc"] for r in fold_results]
 
     for r in fold_results:
+        accs = r.get("best_val_accs", {})
         log.info(
-            "  Fold %d: best_val_loss=%.4f  val_acc=%.3f  epochs=%d",
-            r["fold"], r["best_val_loss"], r["final_val_acc"], r["epochs_run"]
+            "  Fold %d: best_val_loss=%.4f  best_val_acc H1=%.3f H5=%.3f H20=%.3f  epochs=%d",
+            r["fold"], r["best_val_loss"],
+            accs.get("acc_h1", 0), accs.get("acc_h5", 0), accs.get("acc_h20", 0),
+            r["epochs_run"]
         )
 
     log.info("  Mean val loss : %.4f ± %.4f", np.mean(val_losses), np.std(val_losses))
