@@ -93,84 +93,119 @@ class TradingDataset(Dataset):
     def __init__(self, split_df: pd.DataFrame):
         """
         split_df: DataFrame with columns [source_file, window_idx, date, regime]
+
+        Lazy loading with vectorised target construction.
+        - Targets built per-file using numpy (no Python loop per row)
+        - Windows read via memory-mapped arrays in __getitem__
+        - Peak RAM during init: O(largest single file) not O(total dataset)
         """
-        self.samples  = []
-        self.regimes  = []
-        self.targets  = {}   # {horizon: [(direction, magnitude), ...]}
+        self._mmap_cache = {}  # npy_path -> memmap array
 
-        for h in HORIZONS:
-            self.targets[h] = []
+        # Per-horizon target arrays (stored as compact numpy — not dicts)
+        all_npy_paths  = []
+        all_window_idx = []
+        all_regimes    = []
+        target_dirs    = {h: [] for h in HORIZONS}
+        target_mags    = {h: [] for h in HORIZONS}
 
-        # Group by source file for efficient loading
-        files_loaded = {}
         skipped = 0
-
-        for src_file in split_df["source_file"].unique():
-            npy_path = os.path.join(PROCESSED_DIR, src_file + ".npy")
+        for src, group in split_df.groupby("source_file", sort=False):
+            npy_path = os.path.join(PROCESSED_DIR, src + ".npy")
             if not os.path.exists(npy_path):
                 skipped += 1
                 continue
-            files_loaded[src_file] = np.load(npy_path)   # [n, 60, 29]
+
+            # Memory-map the file — no data loaded into RAM yet
+            arr = self._get_array(npy_path)
+            n   = len(arr)
+
+            idxs  = group["window_idx"].values.astype(int)
+            regs  = group["regime"].fillna(1).values.astype(np.float32)
+
+            # Filter out-of-bounds indices
+            valid = idxs < n
+            idxs  = idxs[valid]
+            regs  = regs[valid]
+            if len(idxs) == 0:
+                continue
+
+            all_npy_paths.extend([npy_path] * len(idxs))
+            all_window_idx.extend(idxs.tolist())
+            all_regimes.extend(regs.tolist())
+
+            # Build targets vectorised per horizon — single file in RAM at once
+            for h in HORIZONS:
+                future_idxs = idxs + h
+                in_bounds   = future_idxs < n
+
+                mags  = np.where(
+                    in_bounds,
+                    # Read just the log_return column of future last bars
+                    np.array([
+                        float(arr[fi, -1, 0]) if fi < n else 0.0
+                        for fi in future_idxs
+                    ], dtype=np.float32),
+                    0.0
+                )
+                dirs = np.where(in_bounds,
+                                np.where(mags > 0, 1.0, 0.0),
+                                0.5).astype(np.float32)
+
+                target_dirs[h].append(dirs)
+                target_mags[h].append(mags)
 
         if skipped > 0:
             log.warning("Dataset: %d .npy files not found", skipped)
 
-        for _, row in split_df.iterrows():
-            src  = row["source_file"]
-            idx  = int(row["window_idx"])
-            reg  = row["regime"]
-
-            if src not in files_loaded:
-                continue
-
-            arr = files_loaded[src]
-            if idx >= len(arr):
-                continue
-
-            window = arr[idx]   # [60, 29]
-            self.samples.append(window)
-            self.regimes.append(reg if not np.isnan(reg) else 1)
-
-            # Build targets for each horizon using log_return (feature 0).
-            #
-            # Each window arr[idx] covers bars [t, t+59].
-            # Windows slide forward 1 bar at a time, so arr[idx+1] covers
-            # [t+1, t+60] — its last bar (-1) is the first bar AFTER our window.
-            # For horizon h, we use the last bar of arr[idx+h] as the forward
-            # return signal — this is bar t+59+h, fully outside the input window.
-            # This is the ONLY correct construction — any slice inside arr[idx]
-            # would be look-ahead leakage since the model's input is arr[idx].
-            for h in HORIZONS:
-                future_idx = idx + h
-                if future_idx < len(arr):
-                    mag   = float(arr[future_idx, -1, 0])  # last bar log_return of future window
-                    direc = 1.0 if mag > 0 else 0.0
-                else:
-                    mag   = 0.0
-                    direc = 0.5   # unknown — neutral label
-                self.targets[h].append((direc, mag))
-
-        self.samples = np.array(self.samples, dtype=np.float32)
-        self.regimes = np.array(self.regimes, dtype=np.float32)
-
-        for h in HORIZONS:
-            dirs = np.array([t[0] for t in self.targets[h]], dtype=np.float32)
-            mags = np.array([t[1] for t in self.targets[h]], dtype=np.float32)
-            self.targets[h] = (dirs, mags)
-
-    def __len__(self):
-        return len(self.samples)
-
-    def __getitem__(self, idx):
-        x = torch.from_numpy(self.samples[idx])   # [60, 29]
-        targets = {
+        # Consolidate into compact numpy arrays
+        self.index = list(zip(all_npy_paths,
+                              all_window_idx,
+                              all_regimes))
+        self.targets = {
             h: (
-                torch.tensor(self.targets[h][0][idx]),
-                torch.tensor(self.targets[h][1][idx]),
+                np.concatenate(target_dirs[h]).astype(np.float32),
+                np.concatenate(target_mags[h]).astype(np.float32),
             )
             for h in HORIZONS
         }
-        regime = torch.tensor(self.regimes[idx])
+        log.info("    Index built: %d samples from %d files",
+                 len(self.index),
+                 split_df["source_file"].nunique() - skipped)
+
+    def _get_array(self, npy_path: str) -> np.ndarray:
+        """Return memory-mapped array, opening once per path."""
+        if npy_path not in self._mmap_cache:
+            self._mmap_cache[npy_path] = np.load(npy_path, mmap_mode="r")
+        return self._mmap_cache[npy_path]
+
+    @staticmethod
+    def _normalise_features(window: np.ndarray) -> np.ndarray:
+        """Pad or truncate feature dim to N_FEATURES."""
+        n_feat = window.shape[1]
+        if n_feat == N_FEATURES:
+            return window.copy()
+        elif n_feat > N_FEATURES:
+            return window[:, :N_FEATURES].copy()
+        else:
+            pad = np.zeros((window.shape[0], N_FEATURES - n_feat), dtype=np.float32)
+            return np.concatenate([window, pad], axis=1)
+
+    def __len__(self):
+        return len(self.index)
+
+    def __getitem__(self, idx):
+        npy_path, win_idx, reg = self.index[idx]
+        arr    = self._get_array(npy_path)
+        window = self._normalise_features(arr[win_idx].astype(np.float32))
+        x      = torch.from_numpy(window)
+        targets = {
+            h: (
+                torch.tensor(self.targets[h][0][idx], dtype=torch.float32),
+                torch.tensor(self.targets[h][1][idx], dtype=torch.float32),
+            )
+            for h in HORIZONS
+        }
+        regime = torch.tensor(reg, dtype=torch.float32)
         return x, targets, regime
 
 
@@ -179,12 +214,12 @@ def make_weighted_sampler(dataset: TradingDataset) -> WeightedRandomSampler:
     Build inverse-frequency weights per regime class so all 6 classes
     get equal representation during training (blueprint Section 3.4).
     """
-    regimes  = dataset.regimes.astype(int)
+    regimes  = np.array([dataset.index[i][2] for i in range(len(dataset))], dtype=float).astype(int)
     n        = len(regimes)
-    counts   = np.bincount(regimes, minlength=6).astype(float)
-    counts   = np.maximum(counts, 1)   # avoid div by zero for missing classes
+    counts   = np.bincount(np.clip(regimes, 0, 5), minlength=6).astype(float)
+    counts   = np.maximum(counts, 1)
     weights_per_class = 1.0 / counts
-    sample_weights    = weights_per_class[regimes]
+    sample_weights    = weights_per_class[np.clip(regimes, 0, 5)]
     return WeightedRandomSampler(
         weights=torch.from_numpy(sample_weights).float(),
         num_samples=n,
@@ -505,8 +540,21 @@ def main():
     ]
     log.info("Folds to train: %s", fold_numbers)
 
+    # Skip folds that already have a saved checkpoint
     fold_results = []
     for fold_n in fold_numbers:
+        ckpt_path = os.path.join(MODELS_DIR, f"checkpoint_fold_{fold_n}.pt")
+        if os.path.exists(ckpt_path):
+            log.info("Fold %d checkpoint already exists — skipping.", fold_n)
+            ckpt = torch.load(ckpt_path, map_location="cpu")
+            fold_results.append({
+                "fold":          fold_n,
+                "best_val_loss": ckpt.get("val_loss", float("nan")),
+                "epochs_run":    ckpt.get("epoch_stopped", 0),
+                "checkpoint":    ckpt_path,
+                "final_val_acc": 0.0,
+            })
+            continue
         result = train_fold(fold_n, device)
         if result:
             fold_results.append(result)
@@ -549,7 +597,7 @@ def main():
         log.info("  Base checkpoint already exists — not overwritten: %s", base_path)
 
     log.info("Stage 5 complete.")
-    log.info("Nex step: run evaluation.py (Stage 7) on the test splits.")
+    log.info("Next step: run evaluation.py (Stage 7) on the test splits.")
 
 
 if __name__ == "__main__":
