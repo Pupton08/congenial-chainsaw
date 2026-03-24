@@ -63,7 +63,7 @@ MIN_REGIME_ACC      = 0.51
 MAX_FOLD_SHARPE_STD = 0.4
 LEAKAGE_ACC_FLAG    = 0.60
 VAL_TEST_SHARPE_GAP = 0.5
-
+'''The first 5 steps have been done and the evaluations and position sizing scripts have been made but are still be perfected. I want you to add a part to the output that states the average number of candles per trades the average profit from each and stats like these. The 2 files added above are the evaluation and postposition sizing scripts.'''
 # Backtest / position sizing defaults
 STARTING_CAPITAL    = 10_000.0   # £10,000 — change to your actual capital
 KELLY_FRACTION      = 0.7        # half-Kelly

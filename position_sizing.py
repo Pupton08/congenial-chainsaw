@@ -436,9 +436,9 @@ if __name__ == "__main__":
 
     sizer = PositionSizer(
         starting_capital=10_000,
-        max_risk_per_trade=0.02,
-        kelly_fraction=0.5,
-        min_prob=0.53,
+        max_risk_per_trade=0.03,
+        kelly_fraction=0.7,
+        min_prob=0.56,
     )
 
     # Show how size scales with probability
