@@ -783,3 +783,788 @@ Files by resolution:
 2026-03-20 20:05:46,491  INFO        1H   : 59 files
 2026-03-20 20:05:46,491  INFO        1W   : 59 files
 2026-03-20 20:05:46,491  INFO        4H   : 59 files
+2026-03-24 19:35:45,947  INFO      Stage 1 Data Collection — Start
+2026-03-24 19:35:45,949  INFO      Output directory : /workspaces/congenial-chainsaw/data/raw
+2026-03-24 19:35:45,949  INFO      Long history from: 2015-01-01
+2026-03-24 19:35:45,949  INFO      Intraday from    : 2024-04-03  (Yahoo Finance cap)
+2026-03-24 19:35:45,949  INFO      End date         : 2026-03-24
+2026-03-24 19:35:45,950  INFO      Total instruments: 59
+2026-03-24 19:35:45,950  INFO      ============================================================
+2026-03-24 19:35:45,950  INFO      Instrument: AAPL  [NYSE]
+2026-03-24 19:35:45,950  INFO      [DL]   AAPL — 1D — 1d
+2026-03-24 19:35:46,752  INFO        → Saved: data/raw/NYSE_AAPL_1D_20150101_20260324.csv
+2026-03-24 19:35:46,757  INFO        ✓  2821 rows — OK
+2026-03-24 19:35:47,258  INFO      [DL]   AAPL — 1W — 1wk
+2026-03-24 19:35:47,413  INFO        → Saved: data/raw/NYSE_AAPL_1W_20150101_20260324.csv
+2026-03-24 19:35:47,415  INFO        ✓  586 rows — OK
+2026-03-24 19:35:47,915  INFO      [DL]   AAPL — 1H — 1h
+2026-03-24 19:35:48,169  INFO        → Saved: data/raw/NYSE_AAPL_1H_20240403_20260324.csv
+2026-03-24 19:35:48,177  INFO        ✓  3434 rows — OK
+2026-03-24 19:35:48,720  INFO      [4H]  Resampled from 1H → data/raw/NYSE_AAPL_4H_20240403_20260324.csv
+2026-03-24 19:35:48,723  INFO        ✓  1151 rows — OK
+2026-03-24 19:35:49,723  INFO      ============================================================
+2026-03-24 19:35:49,723  INFO      Instrument: MSFT  [NYSE]
+2026-03-24 19:35:49,723  INFO      [DL]   MSFT — 1D — 1d
+2026-03-24 19:35:49,961  INFO        → Saved: data/raw/NYSE_MSFT_1D_20150101_20260324.csv
+2026-03-24 19:35:49,967  INFO        ✓  2821 rows — OK
+2026-03-24 19:35:50,467  INFO      [DL]   MSFT — 1W — 1wk
+2026-03-24 19:35:50,613  INFO        → Saved: data/raw/NYSE_MSFT_1W_20150101_20260324.csv
+2026-03-24 19:35:50,615  INFO        ✓  586 rows — OK
+2026-03-24 19:35:51,115  INFO      [DL]   MSFT — 1H — 1h
+2026-03-24 19:35:51,356  INFO        → Saved: data/raw/NYSE_MSFT_1H_20240403_20260324.csv
+2026-03-24 19:35:51,368  INFO        ✓  3434 rows — OK
+2026-03-24 19:35:51,904  INFO      [4H]  Resampled from 1H → data/raw/NYSE_MSFT_4H_20240403_20260324.csv
+2026-03-24 19:35:51,907  INFO        ✓  1151 rows — OK
+2026-03-24 19:35:52,908  INFO      ============================================================
+2026-03-24 19:35:52,908  INFO      Instrument: JPM  [NYSE]
+2026-03-24 19:35:52,908  INFO      [DL]   JPM — 1D — 1d
+2026-03-24 19:35:53,151  INFO        → Saved: data/raw/NYSE_JPM_1D_20150101_20260324.csv
+2026-03-24 19:35:53,157  INFO        ✓  2821 rows — OK
+2026-03-24 19:35:53,657  INFO      [DL]   JPM — 1W — 1wk
+2026-03-24 19:35:53,822  INFO        → Saved: data/raw/NYSE_JPM_1W_20150101_20260324.csv
+2026-03-24 19:35:53,824  INFO        ✓  586 rows — OK
+2026-03-24 19:35:54,325  INFO      [DL]   JPM — 1H — 1h
+2026-03-24 19:35:54,569  INFO        → Saved: data/raw/NYSE_JPM_1H_20240403_20260324.csv
+2026-03-24 19:35:54,576  INFO        ✓  3434 rows — OK
+2026-03-24 19:35:55,117  INFO      [4H]  Resampled from 1H → data/raw/NYSE_JPM_4H_20240403_20260324.csv
+2026-03-24 19:35:55,120  INFO        ✓  1151 rows — OK
+2026-03-24 19:35:56,120  INFO      ============================================================
+2026-03-24 19:35:56,121  INFO      Instrument: XOM  [NYSE]
+2026-03-24 19:35:56,121  INFO      [DL]   XOM — 1D — 1d
+2026-03-24 19:35:56,391  INFO        → Saved: data/raw/NYSE_XOM_1D_20150101_20260324.csv
+2026-03-24 19:35:56,401  INFO        ✓  2821 rows — OK
+2026-03-24 19:35:56,902  INFO      [DL]   XOM — 1W — 1wk
+2026-03-24 19:35:57,069  INFO        → Saved: data/raw/NYSE_XOM_1W_20150101_20260324.csv
+2026-03-24 19:35:57,071  INFO        ✓  586 rows — OK
+2026-03-24 19:35:57,571  INFO      [DL]   XOM — 1H — 1h
+2026-03-24 19:35:57,806  INFO        → Saved: data/raw/NYSE_XOM_1H_20240403_20260324.csv
+2026-03-24 19:35:57,813  INFO        ✓  3434 rows — OK
+2026-03-24 19:35:58,349  INFO      [4H]  Resampled from 1H → data/raw/NYSE_XOM_4H_20240403_20260324.csv
+2026-03-24 19:35:58,352  INFO        ✓  1151 rows — OK
+2026-03-24 19:35:59,353  INFO      ============================================================
+2026-03-24 19:35:59,353  INFO      Instrument: JNJ  [NYSE]
+2026-03-24 19:35:59,353  INFO      [DL]   JNJ — 1D — 1d
+2026-03-24 19:35:59,609  INFO        → Saved: data/raw/NYSE_JNJ_1D_20150101_20260324.csv
+2026-03-24 19:35:59,615  INFO        ✓  2821 rows — OK
+2026-03-24 19:36:00,115  INFO      [DL]   JNJ — 1W — 1wk
+2026-03-24 19:36:00,284  INFO        → Saved: data/raw/NYSE_JNJ_1W_20150101_20260324.csv
+2026-03-24 19:36:00,286  INFO        ✓  586 rows — OK
+2026-03-24 19:36:00,787  INFO      [DL]   JNJ — 1H — 1h
+2026-03-24 19:36:01,055  INFO        → Saved: data/raw/NYSE_JNJ_1H_20240403_20260324.csv
+2026-03-24 19:36:01,062  INFO        ✓  3434 rows — OK
+2026-03-24 19:36:01,597  INFO      [4H]  Resampled from 1H → data/raw/NYSE_JNJ_4H_20240403_20260324.csv
+2026-03-24 19:36:01,601  INFO        ✓  1151 rows — OK
+2026-03-24 19:36:02,601  INFO      ============================================================
+2026-03-24 19:36:02,602  INFO      Instrument: PG  [NYSE]
+2026-03-24 19:36:02,603  INFO      [DL]   PG — 1D — 1d
+2026-03-24 19:36:02,849  INFO        → Saved: data/raw/NYSE_PG_1D_20150101_20260324.csv
+2026-03-24 19:36:02,854  INFO        ✓  2821 rows — OK
+2026-03-24 19:36:03,355  INFO      [DL]   PG — 1W — 1wk
+2026-03-24 19:36:03,551  INFO        → Saved: data/raw/NYSE_PG_1W_20150101_20260324.csv
+2026-03-24 19:36:03,553  INFO        ✓  586 rows — OK
+2026-03-24 19:36:04,054  INFO      [DL]   PG — 1H — 1h
+2026-03-24 19:36:04,290  INFO        → Saved: data/raw/NYSE_PG_1H_20240403_20260324.csv
+2026-03-24 19:36:04,298  INFO        ✓  3434 rows — OK
+2026-03-24 19:36:04,834  INFO      [4H]  Resampled from 1H → data/raw/NYSE_PG_4H_20240403_20260324.csv
+2026-03-24 19:36:04,836  INFO        ✓  1151 rows — OK
+2026-03-24 19:36:05,837  INFO      ============================================================
+2026-03-24 19:36:05,837  INFO      Instrument: UNH  [NYSE]
+2026-03-24 19:36:05,837  INFO      [DL]   UNH — 1D — 1d
+2026-03-24 19:36:06,092  INFO        → Saved: data/raw/NYSE_UNH_1D_20150101_20260324.csv
+2026-03-24 19:36:06,098  INFO        ✓  2821 rows — OK
+2026-03-24 19:36:06,598  INFO      [DL]   UNH — 1W — 1wk
+2026-03-24 19:36:06,777  INFO        → Saved: data/raw/NYSE_UNH_1W_20150101_20260324.csv
+2026-03-24 19:36:06,779  INFO        ✓  586 rows — OK
+2026-03-24 19:36:07,279  INFO      [DL]   UNH — 1H — 1h
+2026-03-24 19:36:07,499  INFO        → Saved: data/raw/NYSE_UNH_1H_20240403_20260324.csv
+2026-03-24 19:36:07,506  INFO        ✓  3434 rows — OK
+2026-03-24 19:36:08,042  INFO      [4H]  Resampled from 1H → data/raw/NYSE_UNH_4H_20240403_20260324.csv
+2026-03-24 19:36:08,044  INFO        ✓  1151 rows — OK
+2026-03-24 19:36:09,045  INFO      ============================================================
+2026-03-24 19:36:09,046  INFO      Instrument: BAC  [NYSE]
+2026-03-24 19:36:09,046  INFO      [DL]   BAC — 1D — 1d
+2026-03-24 19:36:09,297  INFO        → Saved: data/raw/NYSE_BAC_1D_20150101_20260324.csv
+2026-03-24 19:36:09,302  INFO        ✓  2821 rows — OK
+2026-03-24 19:36:09,803  INFO      [DL]   BAC — 1W — 1wk
+2026-03-24 19:36:09,949  INFO        → Saved: data/raw/NYSE_BAC_1W_20150101_20260324.csv
+2026-03-24 19:36:09,951  INFO        ✓  586 rows — OK
+2026-03-24 19:36:10,451  INFO      [DL]   BAC — 1H — 1h
+2026-03-24 19:36:10,668  INFO        → Saved: data/raw/NYSE_BAC_1H_20240403_20260324.csv
+2026-03-24 19:36:10,675  INFO        ✓  3434 rows — OK
+2026-03-24 19:36:11,211  INFO      [4H]  Resampled from 1H → data/raw/NYSE_BAC_4H_20240403_20260324.csv
+2026-03-24 19:36:11,214  INFO        ✓  1151 rows — OK
+2026-03-24 19:36:12,215  INFO      ============================================================
+2026-03-24 19:36:12,215  INFO      Instrument: CVX  [NYSE]
+2026-03-24 19:36:12,215  INFO      [DL]   CVX — 1D — 1d
+2026-03-24 19:36:12,473  INFO        → Saved: data/raw/NYSE_CVX_1D_20150101_20260324.csv
+2026-03-24 19:36:12,479  INFO        ✓  2821 rows — OK
+2026-03-24 19:36:12,980  INFO      [DL]   CVX — 1W — 1wk
+2026-03-24 19:36:13,222  INFO        → Saved: data/raw/NYSE_CVX_1W_20150101_20260324.csv
+2026-03-24 19:36:13,225  INFO        ✓  586 rows — OK
+2026-03-24 19:36:13,727  INFO      [DL]   CVX — 1H — 1h
+2026-03-24 19:36:14,061  INFO        → Saved: data/raw/NYSE_CVX_1H_20240403_20260324.csv
+2026-03-24 19:36:14,068  INFO        ✓  3434 rows — OK
+2026-03-24 19:36:14,604  INFO      [4H]  Resampled from 1H → data/raw/NYSE_CVX_4H_20240403_20260324.csv
+2026-03-24 19:36:14,607  INFO        ✓  1151 rows — OK
+2026-03-24 19:36:15,607  INFO      ============================================================
+2026-03-24 19:36:15,607  INFO      Instrument: AMZN  [NYSE]
+2026-03-24 19:36:15,608  INFO      [DL]   AMZN — 1D — 1d
+2026-03-24 19:36:15,770  INFO        → Saved: data/raw/NYSE_AMZN_1D_20150101_20260324.csv
+2026-03-24 19:36:15,776  INFO        ✓  2821 rows — OK
+2026-03-24 19:36:16,277  INFO      [DL]   AMZN — 1W — 1wk
+2026-03-24 19:36:16,381  INFO        → Saved: data/raw/NYSE_AMZN_1W_20150101_20260324.csv
+2026-03-24 19:36:16,384  INFO        ✓  586 rows — OK
+2026-03-24 19:36:16,885  INFO      [DL]   AMZN — 1H — 1h
+2026-03-24 19:36:17,108  INFO        → Saved: data/raw/NYSE_AMZN_1H_20240403_20260324.csv
+2026-03-24 19:36:17,115  INFO        ✓  3434 rows — OK
+2026-03-24 19:36:17,654  INFO      [4H]  Resampled from 1H → data/raw/NYSE_AMZN_4H_20240403_20260324.csv
+2026-03-24 19:36:17,657  INFO        ✓  1151 rows — OK
+2026-03-24 19:36:18,658  INFO      ============================================================
+2026-03-24 19:36:18,658  INFO      Instrument: GOOGL  [NYSE]
+2026-03-24 19:36:18,659  INFO      [DL]   GOOGL — 1D — 1d
+2026-03-24 19:36:19,173  INFO        → Saved: data/raw/NYSE_GOOGL_1D_20150101_20260324.csv
+2026-03-24 19:36:19,182  INFO        ✓  2821 rows — OK
+2026-03-24 19:36:19,683  INFO      [DL]   GOOGL — 1W — 1wk
+2026-03-24 19:36:19,781  INFO        → Saved: data/raw/NYSE_GOOGL_1W_20150101_20260324.csv
+2026-03-24 19:36:19,783  INFO        ✓  586 rows — OK
+2026-03-24 19:36:20,284  INFO      [DL]   GOOGL — 1H — 1h
+2026-03-24 19:36:20,517  INFO        → Saved: data/raw/NYSE_GOOGL_1H_20240403_20260324.csv
+2026-03-24 19:36:20,524  INFO        ✓  3434 rows — OK
+2026-03-24 19:36:21,060  INFO      [4H]  Resampled from 1H → data/raw/NYSE_GOOGL_4H_20240403_20260324.csv
+2026-03-24 19:36:21,063  INFO        ✓  1151 rows — OK
+2026-03-24 19:36:22,064  INFO      ============================================================
+2026-03-24 19:36:22,064  INFO      Instrument: META  [NYSE]
+2026-03-24 19:36:22,064  INFO      [DL]   META — 1D — 1d
+2026-03-24 19:36:22,248  INFO        → Saved: data/raw/NYSE_META_1D_20150101_20260324.csv
+2026-03-24 19:36:22,255  INFO        ✓  2821 rows — OK
+2026-03-24 19:36:22,756  INFO      [DL]   META — 1W — 1wk
+2026-03-24 19:36:22,842  INFO        → Saved: data/raw/NYSE_META_1W_20150101_20260324.csv
+2026-03-24 19:36:22,845  INFO        ✓  586 rows — OK
+2026-03-24 19:36:23,345  INFO      [DL]   META — 1H — 1h
+2026-03-24 19:36:23,609  INFO        → Saved: data/raw/NYSE_META_1H_20240403_20260324.csv
+2026-03-24 19:36:23,615  INFO        ✓  3434 rows — OK
+2026-03-24 19:36:24,151  INFO      [4H]  Resampled from 1H → data/raw/NYSE_META_4H_20240403_20260324.csv
+2026-03-24 19:36:24,155  INFO        ✓  1151 rows — OK
+2026-03-24 19:36:25,155  INFO      ============================================================
+2026-03-24 19:36:25,155  INFO      Instrument: TSLA  [NYSE]
+2026-03-24 19:36:25,155  INFO      [DL]   TSLA — 1D — 1d
+2026-03-24 19:36:25,393  INFO        → Saved: data/raw/NYSE_TSLA_1D_20150101_20260324.csv
+2026-03-24 19:36:25,413  INFO        ✓  2821 rows — OK
+2026-03-24 19:36:25,914  INFO      [DL]   TSLA — 1W — 1wk
+2026-03-24 19:36:26,010  INFO        → Saved: data/raw/NYSE_TSLA_1W_20150101_20260324.csv
+2026-03-24 19:36:26,012  INFO        ✓  586 rows — OK
+2026-03-24 19:36:26,512  INFO      [DL]   TSLA — 1H — 1h
+2026-03-24 19:36:26,790  INFO        → Saved: data/raw/NYSE_TSLA_1H_20240403_20260324.csv
+2026-03-24 19:36:26,797  INFO        ✓  3434 rows — OK
+2026-03-24 19:36:27,332  INFO      [4H]  Resampled from 1H → data/raw/NYSE_TSLA_4H_20240403_20260324.csv
+2026-03-24 19:36:27,335  INFO        ✓  1151 rows — OK
+2026-03-24 19:36:28,336  INFO      ============================================================
+2026-03-24 19:36:28,336  INFO      Instrument: NVDA  [NYSE]
+2026-03-24 19:36:28,336  INFO      [DL]   NVDA — 1D — 1d
+2026-03-24 19:36:28,532  INFO        → Saved: data/raw/NYSE_NVDA_1D_20150101_20260324.csv
+2026-03-24 19:36:28,537  INFO        ✓  2821 rows — OK
+2026-03-24 19:36:29,038  INFO      [DL]   NVDA — 1W — 1wk
+2026-03-24 19:36:29,208  INFO        → Saved: data/raw/NYSE_NVDA_1W_20150101_20260324.csv
+2026-03-24 19:36:29,217  INFO        ✓  586 rows — OK
+2026-03-24 19:36:29,718  INFO      [DL]   NVDA — 1H — 1h
+2026-03-24 19:36:30,051  INFO        → Saved: data/raw/NYSE_NVDA_1H_20240403_20260324.csv
+2026-03-24 19:36:30,057  INFO        ✓  3434 rows — OK
+2026-03-24 19:36:30,593  INFO      [4H]  Resampled from 1H → data/raw/NYSE_NVDA_4H_20240403_20260324.csv
+2026-03-24 19:36:30,596  INFO        ✓  1151 rows — OK
+2026-03-24 19:36:31,596  INFO      ============================================================
+2026-03-24 19:36:31,597  INFO      Instrument: V  [NYSE]
+2026-03-24 19:36:31,597  INFO      [DL]   V — 1D — 1d
+2026-03-24 19:36:31,900  INFO        → Saved: data/raw/NYSE_V_1D_20150101_20260324.csv
+2026-03-24 19:36:31,905  INFO        ✓  2821 rows — OK
+2026-03-24 19:36:32,406  INFO      [DL]   V — 1W — 1wk
+2026-03-24 19:36:32,530  INFO        → Saved: data/raw/NYSE_V_1W_20150101_20260324.csv
+2026-03-24 19:36:32,532  INFO        ✓  586 rows — OK
+2026-03-24 19:36:33,033  INFO      [DL]   V — 1H — 1h
+2026-03-24 19:36:33,248  INFO        → Saved: data/raw/NYSE_V_1H_20240403_20260324.csv
+2026-03-24 19:36:33,256  INFO        ✓  3434 rows — OK
+2026-03-24 19:36:33,792  INFO      [4H]  Resampled from 1H → data/raw/NYSE_V_4H_20240403_20260324.csv
+2026-03-24 19:36:33,795  INFO        ✓  1151 rows — OK
+2026-03-24 19:36:34,795  INFO      ============================================================
+2026-03-24 19:36:34,796  INFO      Instrument: SHEL.L  [LSE]
+2026-03-24 19:36:34,796  INFO      [DL]   SHEL.L — 1D — 1d
+2026-03-24 19:36:35,039  INFO        → Saved: data/raw/LSE_SHELL_1D_20150101_20260324.csv
+2026-03-24 19:36:35,042  INFO        ✓  2836 rows — OK
+2026-03-24 19:36:35,543  INFO      [DL]   SHEL.L — 1W — 1wk
+2026-03-24 19:36:35,716  INFO        → Saved: data/raw/LSE_SHELL_1W_20150101_20260324.csv
+2026-03-24 19:36:35,718  INFO        ✓  586 rows — OK
+2026-03-24 19:36:36,218  INFO      [DL]   SHEL.L — 1H — 1h
+2026-03-24 19:36:36,497  INFO        → Saved: data/raw/LSE_SHELL_1H_20240403_20260324.csv
+2026-03-24 19:36:36,506  INFO        ✓  4480 rows — OK
+2026-03-24 19:36:37,044  INFO      [4H]  Resampled from 1H → data/raw/LSE_SHELL_4H_20240403_20260324.csv
+2026-03-24 19:36:37,047  INFO        ✓  1492 rows — OK
+2026-03-24 19:36:38,048  INFO      ============================================================
+2026-03-24 19:36:38,048  INFO      Instrument: AZN.L  [LSE]
+2026-03-24 19:36:38,048  INFO      [DL]   AZN.L — 1D — 1d
+2026-03-24 19:36:38,254  INFO        → Saved: data/raw/LSE_AZNL_1D_20150101_20260324.csv
+2026-03-24 19:36:38,257  INFO        ✓  2836 rows — OK
+2026-03-24 19:36:38,758  INFO      [DL]   AZN.L — 1W — 1wk
+2026-03-24 19:36:38,940  INFO        → Saved: data/raw/LSE_AZNL_1W_20150101_20260324.csv
+2026-03-24 19:36:38,943  INFO        ✓  586 rows — OK
+2026-03-24 19:36:39,443  INFO      [DL]   AZN.L — 1H — 1h
+2026-03-24 19:36:39,669  INFO        → Saved: data/raw/LSE_AZNL_1H_20240403_20260324.csv
+2026-03-24 19:36:39,675  INFO        ✓  4480 rows — OK
+2026-03-24 19:36:40,220  INFO      [4H]  Resampled from 1H → data/raw/LSE_AZNL_4H_20240403_20260324.csv
+2026-03-24 19:36:40,222  INFO        ✓  1492 rows — OK
+2026-03-24 19:36:41,223  INFO      ============================================================
+2026-03-24 19:36:41,223  INFO      Instrument: HSBA.L  [LSE]
+2026-03-24 19:36:41,223  INFO      [DL]   HSBA.L — 1D — 1d
+2026-03-24 19:36:41,467  INFO        → Saved: data/raw/LSE_HSBAL_1D_20150101_20260324.csv
+2026-03-24 19:36:41,478  INFO        ✓  2836 rows — OK
+2026-03-24 19:36:41,980  INFO      [DL]   HSBA.L — 1W — 1wk
+2026-03-24 19:36:42,161  INFO        → Saved: data/raw/LSE_HSBAL_1W_20150101_20260324.csv
+2026-03-24 19:36:42,163  INFO        ✓  586 rows — OK
+2026-03-24 19:36:42,663  INFO      [DL]   HSBA.L — 1H — 1h
+2026-03-24 19:36:42,905  INFO        → Saved: data/raw/LSE_HSBAL_1H_20240403_20260324.csv
+2026-03-24 19:36:42,913  INFO        ✓  4480 rows — OK
+2026-03-24 19:36:43,455  INFO      [4H]  Resampled from 1H → data/raw/LSE_HSBAL_4H_20240403_20260324.csv
+2026-03-24 19:36:43,458  INFO        ✓  1492 rows — OK
+2026-03-24 19:36:44,459  INFO      ============================================================
+2026-03-24 19:36:44,459  INFO      Instrument: BP.L  [LSE]
+2026-03-24 19:36:44,459  INFO      [DL]   BP.L — 1D — 1d
+2026-03-24 19:36:44,703  INFO        → Saved: data/raw/LSE_BPL_1D_20150101_20260324.csv
+2026-03-24 19:36:44,709  INFO        ✓  2835 rows — OK
+2026-03-24 19:36:45,209  INFO      [DL]   BP.L — 1W — 1wk
+2026-03-24 19:36:45,412  INFO        → Saved: data/raw/LSE_BPL_1W_20150101_20260324.csv
+2026-03-24 19:36:45,414  INFO        ✓  586 rows — OK
+2026-03-24 19:36:45,915  INFO      [DL]   BP.L — 1H — 1h
+2026-03-24 19:36:46,317  INFO        → Saved: data/raw/LSE_BPL_1H_20240403_20260324.csv
+2026-03-24 19:36:46,325  INFO        ✓  4480 rows — OK
+2026-03-24 19:36:46,869  INFO      [4H]  Resampled from 1H → data/raw/LSE_BPL_4H_20240403_20260324.csv
+2026-03-24 19:36:46,872  INFO        ✓  1492 rows — OK
+2026-03-24 19:36:47,873  INFO      ============================================================
+2026-03-24 19:36:47,873  INFO      Instrument: GSK.L  [LSE]
+2026-03-24 19:36:47,873  INFO      [DL]   GSK.L — 1D — 1d
+2026-03-24 19:36:48,086  INFO        → Saved: data/raw/LSE_GSKL_1D_20150101_20260324.csv
+2026-03-24 19:36:48,091  INFO        ✓  2836 rows — OK
+2026-03-24 19:36:48,592  INFO      [DL]   GSK.L — 1W — 1wk
+2026-03-24 19:36:48,744  INFO        → Saved: data/raw/LSE_GSKL_1W_20150101_20260324.csv
+2026-03-24 19:36:48,746  INFO        ✓  586 rows — OK
+2026-03-24 19:36:49,246  INFO      [DL]   GSK.L — 1H — 1h
+2026-03-24 19:36:49,548  INFO        → Saved: data/raw/LSE_GSKL_1H_20240403_20260324.csv
+2026-03-24 19:36:49,558  INFO        ✓  4480 rows — OK
+2026-03-24 19:36:50,096  INFO      [4H]  Resampled from 1H → data/raw/LSE_GSKL_4H_20240403_20260324.csv
+2026-03-24 19:36:50,099  INFO        ✓  1492 rows — OK
+2026-03-24 19:36:51,100  INFO      ============================================================
+2026-03-24 19:36:51,100  INFO      Instrument: BHP.AX  [ASX]
+2026-03-24 19:36:51,100  INFO      [DL]   BHP.AX — 1D — 1d
+2026-03-24 19:36:51,347  INFO        → Saved: data/raw/ASX_BHPAX_1D_20150101_20260324.csv
+2026-03-24 19:36:51,353  INFO        ✓  2841 rows — OK
+2026-03-24 19:36:51,853  INFO      [DL]   BHP.AX — 1W — 1wk
+2026-03-24 19:36:52,018  INFO        → Saved: data/raw/ASX_BHPAX_1W_20150101_20260324.csv
+2026-03-24 19:36:52,020  INFO        ✓  587 rows — OK
+2026-03-24 19:36:52,520  INFO      [DL]   BHP.AX — 1H — 1h
+2026-03-24 19:36:52,739  INFO        → Saved: data/raw/ASX_BHPAX_1H_20240403_20260324.csv
+2026-03-24 19:36:52,746  INFO        ✓  3484 rows — OK
+2026-03-24 19:36:53,283  INFO      [4H]  Resampled from 1H → data/raw/ASX_BHPAX_4H_20240403_20260324.csv
+2026-03-24 19:36:53,286  INFO        ✓  1242 rows — OK
+2026-03-24 19:36:54,286  INFO      ============================================================
+2026-03-24 19:36:54,287  INFO      Instrument: CBA.AX  [ASX]
+2026-03-24 19:36:54,287  INFO      [DL]   CBA.AX — 1D — 1d
+2026-03-24 19:36:54,533  INFO        → Saved: data/raw/ASX_CBAAX_1D_20150101_20260324.csv
+2026-03-24 19:36:54,539  INFO        ✓  2841 rows — OK
+2026-03-24 19:36:55,039  INFO      [DL]   CBA.AX — 1W — 1wk
+2026-03-24 19:36:55,181  INFO        → Saved: data/raw/ASX_CBAAX_1W_20150101_20260324.csv
+2026-03-24 19:36:55,183  INFO        ✓  587 rows — OK
+2026-03-24 19:36:55,684  INFO      [DL]   CBA.AX — 1H — 1h
+2026-03-24 19:36:55,926  INFO        → Saved: data/raw/ASX_CBAAX_1H_20240403_20260324.csv
+2026-03-24 19:36:55,933  INFO        ✓  3468 rows — OK
+2026-03-24 19:36:56,472  INFO      [4H]  Resampled from 1H → data/raw/ASX_CBAAX_4H_20240403_20260324.csv
+2026-03-24 19:36:56,475  INFO        ✓  1242 rows — OK
+2026-03-24 19:36:57,476  INFO      ============================================================
+2026-03-24 19:36:57,476  INFO      Instrument: CSL.AX  [ASX]
+2026-03-24 19:36:57,476  INFO      [DL]   CSL.AX — 1D — 1d
+2026-03-24 19:36:57,737  INFO        → Saved: data/raw/ASX_CSLAX_1D_20150101_20260324.csv
+2026-03-24 19:36:57,756  INFO        ✓  2841 rows — OK
+2026-03-24 19:36:58,257  INFO      [DL]   CSL.AX — 1W — 1wk
+2026-03-24 19:36:58,416  INFO        → Saved: data/raw/ASX_CSLAX_1W_20150101_20260324.csv
+2026-03-24 19:36:58,419  INFO        ✓  587 rows — OK
+2026-03-24 19:36:58,919  INFO      [DL]   CSL.AX — 1H — 1h
+2026-03-24 19:36:59,311  INFO        → Saved: data/raw/ASX_CSLAX_1H_20240403_20260324.csv
+2026-03-24 19:36:59,319  INFO        ✓  3473 rows — OK
+2026-03-24 19:36:59,856  INFO      [4H]  Resampled from 1H → data/raw/ASX_CSLAX_4H_20240403_20260324.csv
+2026-03-24 19:36:59,860  INFO        ✓  1242 rows — OK
+2026-03-24 19:37:00,860  INFO      ============================================================
+2026-03-24 19:37:00,860  INFO      Instrument: WBC.AX  [ASX]
+2026-03-24 19:37:00,860  INFO      [DL]   WBC.AX — 1D — 1d
+2026-03-24 19:37:01,082  INFO        → Saved: data/raw/ASX_WBCAX_1D_20150101_20260324.csv
+2026-03-24 19:37:01,089  INFO        ✓  2841 rows — OK
+2026-03-24 19:37:01,590  INFO      [DL]   WBC.AX — 1W — 1wk
+2026-03-24 19:37:01,764  INFO        → Saved: data/raw/ASX_WBCAX_1W_20150101_20260324.csv
+2026-03-24 19:37:01,768  INFO        ✓  587 rows — OK
+2026-03-24 19:37:02,268  INFO      [DL]   WBC.AX — 1H — 1h
+2026-03-24 19:37:02,566  INFO        → Saved: data/raw/ASX_WBCAX_1H_20240403_20260324.csv
+2026-03-24 19:37:02,573  INFO        ✓  3475 rows — OK
+2026-03-24 19:37:03,111  INFO      [4H]  Resampled from 1H → data/raw/ASX_WBCAX_4H_20240403_20260324.csv
+2026-03-24 19:37:03,114  INFO        ✓  1242 rows — OK
+2026-03-24 19:37:04,114  INFO      ============================================================
+2026-03-24 19:37:04,114  INFO      Instrument: ANZ.AX  [ASX]
+2026-03-24 19:37:04,114  INFO      [DL]   ANZ.AX — 1D — 1d
+2026-03-24 19:37:04,359  INFO        → Saved: data/raw/ASX_ANZAX_1D_20150101_20260324.csv
+2026-03-24 19:37:04,365  INFO        ✓  2841 rows — OK
+2026-03-24 19:37:04,865  INFO      [DL]   ANZ.AX — 1W — 1wk
+2026-03-24 19:37:05,044  INFO        → Saved: data/raw/ASX_ANZAX_1W_20150101_20260324.csv
+2026-03-24 19:37:05,047  INFO        ✓  587 rows — OK
+2026-03-24 19:37:05,547  INFO      [DL]   ANZ.AX — 1H — 1h
+2026-03-24 19:37:05,799  INFO        → Saved: data/raw/ASX_ANZAX_1H_20240403_20260324.csv
+2026-03-24 19:37:05,806  INFO        ✓  3487 rows — OK
+2026-03-24 19:37:06,342  INFO      [4H]  Resampled from 1H → data/raw/ASX_ANZAX_4H_20240403_20260324.csv
+2026-03-24 19:37:06,344  INFO        ✓  1242 rows — OK
+2026-03-24 19:37:07,345  INFO      ============================================================
+2026-03-24 19:37:07,345  INFO      Instrument: RY.TO  [TSX]
+2026-03-24 19:37:07,345  INFO      [DL]   RY.TO — 1D — 1d
+2026-03-24 19:37:07,549  INFO        → Saved: data/raw/TSX_RYTO_1D_20150101_20260324.csv
+2026-03-24 19:37:07,555  INFO        ✓  2816 rows — OK
+2026-03-24 19:37:08,056  INFO      [DL]   RY.TO — 1W — 1wk
+2026-03-24 19:37:08,206  INFO        → Saved: data/raw/TSX_RYTO_1W_20150101_20260324.csv
+2026-03-24 19:37:08,208  INFO        ✓  586 rows — OK
+2026-03-24 19:37:08,709  INFO      [DL]   RY.TO — 1H — 1h
+2026-03-24 19:37:08,927  INFO        → Saved: data/raw/TSX_RYTO_1H_20240403_20260324.csv
+2026-03-24 19:37:08,934  INFO        ✓  3453 rows — OK
+2026-03-24 19:37:09,470  INFO      [4H]  Resampled from 1H → data/raw/TSX_RYTO_4H_20240403_20260324.csv
+2026-03-24 19:37:09,472  INFO        ✓  1159 rows — OK
+2026-03-24 19:37:10,473  INFO      ============================================================
+2026-03-24 19:37:10,473  INFO      Instrument: TD.TO  [TSX]
+2026-03-24 19:37:10,473  INFO      [DL]   TD.TO — 1D — 1d
+2026-03-24 19:37:10,720  INFO        → Saved: data/raw/TSX_TDTO_1D_20150101_20260324.csv
+2026-03-24 19:37:10,727  INFO        ✓  2816 rows — OK
+2026-03-24 19:37:11,227  INFO      [DL]   TD.TO — 1W — 1wk
+2026-03-24 19:37:11,362  INFO        → Saved: data/raw/TSX_TDTO_1W_20150101_20260324.csv
+2026-03-24 19:37:11,364  INFO        ✓  586 rows — OK
+2026-03-24 19:37:11,864  INFO      [DL]   TD.TO — 1H — 1h
+2026-03-24 19:37:12,079  INFO        → Saved: data/raw/TSX_TDTO_1H_20240403_20260324.csv
+2026-03-24 19:37:12,086  INFO        ✓  3453 rows — OK
+2026-03-24 19:37:12,622  INFO      [4H]  Resampled from 1H → data/raw/TSX_TDTO_4H_20240403_20260324.csv
+2026-03-24 19:37:12,625  INFO        ✓  1159 rows — OK
+2026-03-24 19:37:13,626  INFO      ============================================================
+2026-03-24 19:37:13,626  INFO      Instrument: CNR.TO  [TSX]
+2026-03-24 19:37:13,626  INFO      [DL]   CNR.TO — 1D — 1d
+2026-03-24 19:37:13,835  INFO        → Saved: data/raw/TSX_CNRTO_1D_20150101_20260324.csv
+2026-03-24 19:37:13,841  INFO        ✓  2816 rows — OK
+2026-03-24 19:37:14,342  INFO      [DL]   CNR.TO — 1W — 1wk
+2026-03-24 19:37:14,477  INFO        → Saved: data/raw/TSX_CNRTO_1W_20150101_20260324.csv
+2026-03-24 19:37:14,479  INFO        ✓  586 rows — OK
+2026-03-24 19:37:14,979  INFO      [DL]   CNR.TO — 1H — 1h
+2026-03-24 19:37:15,217  INFO        → Saved: data/raw/TSX_CNRTO_1H_20240403_20260324.csv
+2026-03-24 19:37:15,224  INFO        ✓  3453 rows — OK
+2026-03-24 19:37:15,763  INFO      [4H]  Resampled from 1H → data/raw/TSX_CNRTO_4H_20240403_20260324.csv
+2026-03-24 19:37:15,766  INFO        ✓  1159 rows — OK
+2026-03-24 19:37:16,766  INFO      ============================================================
+2026-03-24 19:37:16,766  INFO      Instrument: SU.TO  [TSX]
+2026-03-24 19:37:16,767  INFO      [DL]   SU.TO — 1D — 1d
+2026-03-24 19:37:17,070  INFO        → Saved: data/raw/TSX_SUTO_1D_20150101_20260324.csv
+2026-03-24 19:37:17,076  INFO        ✓  2816 rows — OK
+2026-03-24 19:37:17,576  INFO      [DL]   SU.TO — 1W — 1wk
+2026-03-24 19:37:17,711  INFO        → Saved: data/raw/TSX_SUTO_1W_20150101_20260324.csv
+2026-03-24 19:37:17,713  INFO        ✓  586 rows — OK
+2026-03-24 19:37:18,213  INFO      [DL]   SU.TO — 1H — 1h
+2026-03-24 19:37:18,418  INFO        → Saved: data/raw/TSX_SUTO_1H_20240403_20260324.csv
+2026-03-24 19:37:18,425  INFO        ✓  3453 rows — OK
+2026-03-24 19:37:18,959  INFO      [4H]  Resampled from 1H → data/raw/TSX_SUTO_4H_20240403_20260324.csv
+2026-03-24 19:37:18,962  INFO        ✓  1159 rows — OK
+2026-03-24 19:37:19,963  INFO      ============================================================
+2026-03-24 19:37:19,963  INFO      Instrument: MFC.TO  [TSX]
+2026-03-24 19:37:19,964  INFO      [DL]   MFC.TO — 1D — 1d
+2026-03-24 19:37:20,171  INFO        → Saved: data/raw/TSX_MFCTO_1D_20150101_20260324.csv
+2026-03-24 19:37:20,177  INFO        ✓  2816 rows — OK
+2026-03-24 19:37:20,678  INFO      [DL]   MFC.TO — 1W — 1wk
+2026-03-24 19:37:20,838  INFO        → Saved: data/raw/TSX_MFCTO_1W_20150101_20260324.csv
+2026-03-24 19:37:20,840  INFO        ✓  586 rows — OK
+2026-03-24 19:37:21,341  INFO      [DL]   MFC.TO — 1H — 1h
+2026-03-24 19:37:21,585  INFO        → Saved: data/raw/TSX_MFCTO_1H_20240403_20260324.csv
+2026-03-24 19:37:21,592  INFO        ✓  3453 rows — OK
+2026-03-24 19:37:22,128  INFO      [4H]  Resampled from 1H → data/raw/TSX_MFCTO_4H_20240403_20260324.csv
+2026-03-24 19:37:22,131  INFO        ✓  1159 rows — OK
+2026-03-24 19:37:23,131  INFO      ============================================================
+2026-03-24 19:37:23,131  INFO      Instrument: ASML.AS  [EURONEXT]
+2026-03-24 19:37:23,132  INFO      [DL]   ASML.AS — 1D — 1d
+2026-03-24 19:37:23,357  INFO        → Saved: data/raw/EURONEXT_ASMLAS_1D_20150101_20260324.csv
+2026-03-24 19:37:23,363  INFO        ✓  2872 rows — OK
+2026-03-24 19:37:23,863  INFO      [DL]   ASML.AS — 1W — 1wk
+2026-03-24 19:37:23,974  INFO        → Saved: data/raw/EURONEXT_ASMLAS_1W_20150101_20260324.csv
+2026-03-24 19:37:23,976  INFO        ✓  587 rows — OK
+2026-03-24 19:37:24,476  INFO      [DL]   ASML.AS — 1H — 1h
+2026-03-24 19:37:24,699  INFO        → Saved: data/raw/EURONEXT_ASMLAS_1H_20240403_20260324.csv
+2026-03-24 19:37:24,712  INFO        ✓  4524 rows — OK
+2026-03-24 19:37:25,259  INFO      [4H]  Resampled from 1H → data/raw/EURONEXT_ASMLAS_4H_20240403_20260324.csv
+2026-03-24 19:37:25,262  INFO        ✓  1508 rows — OK
+2026-03-24 19:37:26,262  INFO      ============================================================
+2026-03-24 19:37:26,263  INFO      Instrument: MC.PA  [EURONEXT]
+2026-03-24 19:37:26,263  INFO      [DL]   MC.PA — 1D — 1d
+2026-03-24 19:37:26,462  INFO        → Saved: data/raw/EURONEXT_MCPA_1D_20150101_20260324.csv
+2026-03-24 19:37:26,468  INFO        ✓  2873 rows — OK
+2026-03-24 19:37:26,969  INFO      [DL]   MC.PA — 1W — 1wk
+2026-03-24 19:37:27,182  INFO        → Saved: data/raw/EURONEXT_MCPA_1W_20150101_20260324.csv
+2026-03-24 19:37:27,187  INFO        ✓  587 rows — OK
+2026-03-24 19:37:27,688  INFO      [DL]   MC.PA — 1H — 1h
+2026-03-24 19:37:27,938  INFO        → Saved: data/raw/EURONEXT_MCPA_1H_20240403_20260324.csv
+2026-03-24 19:37:27,946  INFO        ✓  4524 rows — OK
+2026-03-24 19:37:28,489  INFO      [4H]  Resampled from 1H → data/raw/EURONEXT_MCPA_4H_20240403_20260324.csv
+2026-03-24 19:37:28,492  INFO        ✓  1508 rows — OK
+2026-03-24 19:37:29,492  INFO      ============================================================
+2026-03-24 19:37:29,493  INFO      Instrument: SAP.DE  [EURONEXT]
+2026-03-24 19:37:29,493  INFO      [DL]   SAP.DE — 1D — 1d
+2026-03-24 19:37:29,694  INFO        → Saved: data/raw/EURONEXT_SAPDE_1D_20150101_20260324.csv
+2026-03-24 19:37:29,700  INFO        ✓  2852 rows — OK
+2026-03-24 19:37:30,201  INFO      [DL]   SAP.DE — 1W — 1wk
+2026-03-24 19:37:30,326  INFO        → Saved: data/raw/EURONEXT_SAPDE_1W_20150101_20260324.csv
+2026-03-24 19:37:30,328  INFO        ✓  587 rows — OK
+2026-03-24 19:37:30,828  INFO      [DL]   SAP.DE — 1H — 1h
+2026-03-24 19:37:31,089  INFO        → Saved: data/raw/EURONEXT_SAPDE_1H_20240403_20260324.csv
+2026-03-24 19:37:31,097  INFO        ✓  4492 rows — OK
+2026-03-24 19:37:31,643  INFO      [4H]  Resampled from 1H → data/raw/EURONEXT_SAPDE_4H_20240403_20260324.csv
+2026-03-24 19:37:31,645  INFO        ✓  1498 rows — OK
+2026-03-24 19:37:32,646  INFO      ============================================================
+2026-03-24 19:37:32,646  INFO      Instrument: SIE.DE  [EURONEXT]
+2026-03-24 19:37:32,646  INFO      [DL]   SIE.DE — 1D — 1d
+2026-03-24 19:37:32,883  INFO        → Saved: data/raw/EURONEXT_SIEDE_1D_20150101_20260324.csv
+2026-03-24 19:37:32,888  INFO        ✓  2852 rows — OK
+2026-03-24 19:37:33,389  INFO      [DL]   SIE.DE — 1W — 1wk
+2026-03-24 19:37:33,525  INFO        → Saved: data/raw/EURONEXT_SIEDE_1W_20150101_20260324.csv
+2026-03-24 19:37:33,527  INFO        ✓  587 rows — OK
+2026-03-24 19:37:34,028  INFO      [DL]   SIE.DE — 1H — 1h
+2026-03-24 19:37:34,291  INFO        → Saved: data/raw/EURONEXT_SIEDE_1H_20240403_20260324.csv
+2026-03-24 19:37:34,300  INFO        ✓  4492 rows — OK
+2026-03-24 19:37:34,842  INFO      [4H]  Resampled from 1H → data/raw/EURONEXT_SIEDE_4H_20240403_20260324.csv
+2026-03-24 19:37:34,845  INFO        ✓  1498 rows — OK
+2026-03-24 19:37:35,845  INFO      ============================================================
+2026-03-24 19:37:35,846  INFO      Instrument: TTE.PA  [EURONEXT]
+2026-03-24 19:37:35,846  INFO      [DL]   TTE.PA — 1D — 1d
+2026-03-24 19:37:36,071  INFO        → Saved: data/raw/EURONEXT_TTEPA_1D_20150101_20260324.csv
+2026-03-24 19:37:36,076  INFO        ✓  2873 rows — OK
+2026-03-24 19:37:36,577  INFO      [DL]   TTE.PA — 1W — 1wk
+2026-03-24 19:37:36,754  INFO        → Saved: data/raw/EURONEXT_TTEPA_1W_20150101_20260324.csv
+2026-03-24 19:37:36,756  INFO        ✓  587 rows — OK
+2026-03-24 19:37:37,257  INFO      [DL]   TTE.PA — 1H — 1h
+2026-03-24 19:37:37,543  INFO        → Saved: data/raw/EURONEXT_TTEPA_1H_20240403_20260324.csv
+2026-03-24 19:37:37,551  INFO        ✓  4524 rows — OK
+2026-03-24 19:37:38,094  INFO      [4H]  Resampled from 1H → data/raw/EURONEXT_TTEPA_4H_20240403_20260324.csv
+2026-03-24 19:37:38,097  INFO        ✓  1508 rows — OK
+2026-03-24 19:37:39,098  INFO      ============================================================
+2026-03-24 19:37:39,098  INFO      Instrument: EURUSD=X  [FOREXCOM]
+2026-03-24 19:37:39,098  INFO      [DL]   EURUSD=X — 1D — 1d
+2026-03-24 19:37:39,267  INFO        → Saved: data/raw/FOREXCOM_EURUSDX_1D_20150101_20260324.csv
+2026-03-24 19:37:39,274  INFO        ✓  2921 rows — OK
+2026-03-24 19:37:39,774  INFO      [DL]   EURUSD=X — 1W — 1wk
+2026-03-24 19:37:39,878  INFO        → Saved: data/raw/FOREXCOM_EURUSDX_1W_20150101_20260324.csv
+2026-03-24 19:37:39,880  INFO        ✓  586 rows — OK
+2026-03-24 19:37:40,381  INFO      [DL]   EURUSD=X — 1H — 1h
+2026-03-24 19:37:40,803  INFO        → Saved: data/raw/FOREXCOM_EURUSDX_1H_20240403_20260324.csv
+2026-03-24 19:37:40,821  INFO        ✓  12165 rows — OK
+2026-03-24 19:37:41,437  INFO      [4H]  Resampled from 1H → data/raw/FOREXCOM_EURUSDX_4H_20240403_20260324.csv
+2026-03-24 19:37:41,443  INFO        ✓  3135 rows — OK
+2026-03-24 19:37:42,444  INFO      ============================================================
+2026-03-24 19:37:42,445  INFO      Instrument: GBPUSD=X  [FOREXCOM]
+2026-03-24 19:37:42,445  INFO      [DL]   GBPUSD=X — 1D — 1d
+2026-03-24 19:37:42,639  INFO        → Saved: data/raw/FOREXCOM_GBPUSDX_1D_20150101_20260324.csv
+2026-03-24 19:37:42,647  INFO        ✓  2921 rows — OK
+2026-03-24 19:37:43,148  INFO      [DL]   GBPUSD=X — 1W — 1wk
+2026-03-24 19:37:43,247  INFO        → Saved: data/raw/FOREXCOM_GBPUSDX_1W_20150101_20260324.csv
+2026-03-24 19:37:43,249  INFO        ✓  586 rows — OK
+2026-03-24 19:37:43,749  INFO      [DL]   GBPUSD=X — 1H — 1h
+2026-03-24 19:37:44,154  INFO        → Saved: data/raw/FOREXCOM_GBPUSDX_1H_20240403_20260324.csv
+2026-03-24 19:37:44,172  INFO        ✓  12167 rows — OK
+2026-03-24 19:37:44,766  INFO      [4H]  Resampled from 1H → data/raw/FOREXCOM_GBPUSDX_4H_20240403_20260324.csv
+2026-03-24 19:37:44,771  INFO        ✓  3135 rows — OK
+2026-03-24 19:37:45,771  INFO      ============================================================
+2026-03-24 19:37:45,772  INFO      Instrument: USDJPY=X  [FOREXCOM]
+2026-03-24 19:37:45,772  INFO      [DL]   USDJPY=X — 1D — 1d
+2026-03-24 19:37:45,953  INFO        → Saved: data/raw/FOREXCOM_USDJPYX_1D_20150101_20260324.csv
+2026-03-24 19:37:45,958  INFO        ✓  2921 rows — OK
+2026-03-24 19:37:46,458  INFO      [DL]   USDJPY=X — 1W — 1wk
+2026-03-24 19:37:46,555  INFO        → Saved: data/raw/FOREXCOM_USDJPYX_1W_20150101_20260324.csv
+2026-03-24 19:37:46,557  INFO        ✓  586 rows — OK
+2026-03-24 19:37:47,058  INFO      [DL]   USDJPY=X — 1H — 1h
+2026-03-24 19:37:47,446  INFO        → Saved: data/raw/FOREXCOM_USDJPYX_1H_20240403_20260324.csv
+2026-03-24 19:37:47,462  INFO        ✓  12082 rows — OK
+2026-03-24 19:37:48,068  INFO      [4H]  Resampled from 1H → data/raw/FOREXCOM_USDJPYX_4H_20240403_20260324.csv
+2026-03-24 19:37:48,074  INFO        ✓  3128 rows — OK
+2026-03-24 19:37:49,074  INFO      ============================================================
+2026-03-24 19:37:49,074  INFO      Instrument: AUDUSD=X  [FOREXCOM]
+2026-03-24 19:37:49,074  INFO      [DL]   AUDUSD=X — 1D — 1d
+2026-03-24 19:37:49,268  INFO        → Saved: data/raw/FOREXCOM_AUDUSDX_1D_20150101_20260324.csv
+2026-03-24 19:37:49,272  INFO        ✓  2921 rows — OK
+2026-03-24 19:37:49,773  INFO      [DL]   AUDUSD=X — 1W — 1wk
+2026-03-24 19:37:49,877  INFO        → Saved: data/raw/FOREXCOM_AUDUSDX_1W_20150101_20260324.csv
+2026-03-24 19:37:49,878  INFO        ✓  586 rows — OK
+2026-03-24 19:37:50,379  INFO      [DL]   AUDUSD=X — 1H — 1h
+2026-03-24 19:37:50,854  INFO        → Saved: data/raw/FOREXCOM_AUDUSDX_1H_20240403_20260324.csv
+2026-03-24 19:37:50,869  INFO        ✓  12228 rows — OK
+2026-03-24 19:37:51,460  INFO      [4H]  Resampled from 1H → data/raw/FOREXCOM_AUDUSDX_4H_20240403_20260324.csv
+2026-03-24 19:37:51,465  INFO        ✓  3144 rows — OK
+2026-03-24 19:37:52,465  INFO      ============================================================
+2026-03-24 19:37:52,465  INFO      Instrument: EURGBP=X  [FOREXCOM]
+2026-03-24 19:37:52,465  INFO      [DL]   EURGBP=X — 1D — 1d
+2026-03-24 19:37:52,659  INFO        → Saved: data/raw/FOREXCOM_EURGBPX_1D_20150101_20260324.csv
+2026-03-24 19:37:52,664  INFO        ✓  2922 rows — OK
+2026-03-24 19:37:53,164  INFO      [DL]   EURGBP=X — 1W — 1wk
+2026-03-24 19:37:53,283  INFO        → Saved: data/raw/FOREXCOM_EURGBPX_1W_20150101_20260324.csv
+2026-03-24 19:37:53,286  INFO        ✓  586 rows — OK
+2026-03-24 19:37:53,786  INFO      [DL]   EURGBP=X — 1H — 1h
+2026-03-24 19:37:54,216  INFO        → Saved: data/raw/FOREXCOM_EURGBPX_1H_20240403_20260324.csv
+2026-03-24 19:37:54,231  INFO        ✓  12185 rows — OK
+2026-03-24 19:37:54,823  INFO      [4H]  Resampled from 1H → data/raw/FOREXCOM_EURGBPX_4H_20240403_20260324.csv
+2026-03-24 19:37:54,827  INFO        ✓  3138 rows — OK
+2026-03-24 19:37:55,828  INFO      ============================================================
+2026-03-24 19:37:55,828  INFO      Instrument: GBPJPY=X  [FOREXCOM]
+2026-03-24 19:37:55,828  INFO      [DL]   GBPJPY=X — 1D — 1d
+2026-03-24 19:37:56,015  INFO        → Saved: data/raw/FOREXCOM_GBPJPYX_1D_20150101_20260324.csv
+2026-03-24 19:37:56,020  INFO        ✓  2922 rows — OK
+2026-03-24 19:37:56,520  INFO      [DL]   GBPJPY=X — 1W — 1wk
+2026-03-24 19:37:56,628  INFO        → Saved: data/raw/FOREXCOM_GBPJPYX_1W_20150101_20260324.csv
+2026-03-24 19:37:56,631  INFO        ✓  586 rows — OK
+2026-03-24 19:37:57,131  INFO      [DL]   GBPJPY=X — 1H — 1h
+2026-03-24 19:37:57,521  INFO        → Saved: data/raw/FOREXCOM_GBPJPYX_1H_20240403_20260324.csv
+2026-03-24 19:37:57,534  INFO        ✓  12174 rows — OK
+2026-03-24 19:37:58,128  INFO      [4H]  Resampled from 1H → data/raw/FOREXCOM_GBPJPYX_4H_20240403_20260324.csv
+2026-03-24 19:37:58,132  INFO        ✓  3136 rows — OK
+2026-03-24 19:37:59,133  INFO      ============================================================
+2026-03-24 19:37:59,133  INFO      Instrument: AUDNZD=X  [FOREXCOM]
+2026-03-24 19:37:59,133  INFO      [DL]   AUDNZD=X — 1D — 1d
+2026-03-24 19:37:59,316  INFO        → Saved: data/raw/FOREXCOM_AUDNZDX_1D_20150101_20260324.csv
+2026-03-24 19:37:59,321  INFO        ✓  2923 rows — OK
+2026-03-24 19:37:59,821  INFO      [DL]   AUDNZD=X — 1W — 1wk
+2026-03-24 19:37:59,926  INFO        → Saved: data/raw/FOREXCOM_AUDNZDX_1W_20150101_20260324.csv
+2026-03-24 19:37:59,928  INFO        ✓  586 rows — OK
+2026-03-24 19:38:00,429  INFO      [DL]   AUDNZD=X — 1H — 1h
+2026-03-24 19:38:00,940  INFO        → Saved: data/raw/FOREXCOM_AUDNZDX_1H_20240403_20260324.csv
+2026-03-24 19:38:00,955  INFO        ✓  12226 rows — OK
+2026-03-24 19:38:01,549  INFO      [4H]  Resampled from 1H → data/raw/FOREXCOM_AUDNZDX_4H_20240403_20260324.csv
+2026-03-24 19:38:01,555  INFO        ✓  3144 rows — OK
+2026-03-24 19:38:02,555  INFO      ============================================================
+2026-03-24 19:38:02,555  INFO      Instrument: EURCHF=X  [FOREXCOM]
+2026-03-24 19:38:02,555  INFO      [DL]   EURCHF=X — 1D — 1d
+2026-03-24 19:38:02,741  INFO        → Saved: data/raw/FOREXCOM_EURCHFX_1D_20150101_20260324.csv
+2026-03-24 19:38:02,746  INFO        ✓  2922 rows — OK
+2026-03-24 19:38:03,247  INFO      [DL]   EURCHF=X — 1W — 1wk
+2026-03-24 19:38:03,360  INFO        → Saved: data/raw/FOREXCOM_EURCHFX_1W_20150101_20260324.csv
+2026-03-24 19:38:03,362  INFO        ✓  586 rows — OK
+2026-03-24 19:38:03,862  INFO      [DL]   EURCHF=X — 1H — 1h
+2026-03-24 19:38:04,301  INFO        → Saved: data/raw/FOREXCOM_EURCHFX_1H_20240403_20260324.csv
+2026-03-24 19:38:04,315  INFO        ✓  12173 rows — OK
+2026-03-24 19:38:04,908  INFO      [4H]  Resampled from 1H → data/raw/FOREXCOM_EURCHFX_4H_20240403_20260324.csv
+2026-03-24 19:38:04,913  INFO        ✓  3136 rows — OK
+2026-03-24 19:38:05,913  INFO      ============================================================
+2026-03-24 19:38:05,914  INFO      Instrument: USDCAD=X  [FOREXCOM]
+2026-03-24 19:38:05,914  INFO      [DL]   USDCAD=X — 1D — 1d
+2026-03-24 19:38:06,131  INFO        → Saved: data/raw/FOREXCOM_USDCADX_1D_20150101_20260324.csv
+2026-03-24 19:38:06,136  INFO        ✓  2921 rows — OK
+2026-03-24 19:38:06,637  INFO      [DL]   USDCAD=X — 1W — 1wk
+2026-03-24 19:38:06,741  INFO        → Saved: data/raw/FOREXCOM_USDCADX_1W_20150101_20260324.csv
+2026-03-24 19:38:06,743  INFO        ✓  586 rows — OK
+2026-03-24 19:38:07,243  INFO      [DL]   USDCAD=X — 1H — 1h
+2026-03-24 19:38:08,429  INFO        → Saved: data/raw/FOREXCOM_USDCADX_1H_20240403_20260324.csv
+2026-03-24 19:38:08,542  INFO        ✓  12236 rows — OK
+2026-03-24 19:38:09,159  INFO      [4H]  Resampled from 1H → data/raw/FOREXCOM_USDCADX_4H_20240403_20260324.csv
+2026-03-24 19:38:09,163  INFO        ✓  3144 rows — OK
+2026-03-24 19:38:10,164  INFO      ============================================================
+2026-03-24 19:38:10,164  INFO      Instrument: USDCHF=X  [FOREXCOM]
+2026-03-24 19:38:10,164  INFO      [DL]   USDCHF=X — 1D — 1d
+2026-03-24 19:38:10,352  INFO        → Saved: data/raw/FOREXCOM_USDCHFX_1D_20150101_20260324.csv
+2026-03-24 19:38:10,358  INFO        ✓  2921 rows — OK
+2026-03-24 19:38:10,858  INFO      [DL]   USDCHF=X — 1W — 1wk
+2026-03-24 19:38:10,992  INFO        → Saved: data/raw/FOREXCOM_USDCHFX_1W_20150101_20260324.csv
+2026-03-24 19:38:10,994  INFO        ✓  586 rows — OK
+2026-03-24 19:38:11,494  INFO      [DL]   USDCHF=X — 1H — 1h
+2026-03-24 19:38:12,086  INFO        → Saved: data/raw/FOREXCOM_USDCHFX_1H_20240403_20260324.csv
+2026-03-24 19:38:12,104  INFO        ✓  12122 rows — OK
+2026-03-24 19:38:12,716  INFO      [4H]  Resampled from 1H → data/raw/FOREXCOM_USDCHFX_4H_20240403_20260324.csv
+2026-03-24 19:38:12,724  INFO        ✓  3136 rows — OK
+2026-03-24 19:38:13,725  INFO      ============================================================
+2026-03-24 19:38:13,726  INFO      Instrument: GC=F  [COMEX]
+2026-03-24 19:38:13,726  INFO      [DL]   GC=F — 1D — 1d
+2026-03-24 19:38:13,927  INFO        → Saved: data/raw/COMEX_GCF_1D_20150101_20260324.csv
+2026-03-24 19:38:13,933  INFO        ✓  2821 rows — OK
+2026-03-24 19:38:14,433  INFO      [DL]   GC=F — 1W — 1wk
+2026-03-24 19:38:14,570  INFO        → Saved: data/raw/COMEX_GCF_1W_20150101_20260324.csv
+2026-03-24 19:38:14,572  INFO        ✓  586 rows — OK
+2026-03-24 19:38:15,072  INFO      [DL]   GC=F — 1H — 1h
+2026-03-24 19:38:15,473  INFO        → Saved: data/raw/COMEX_GCF_1H_20240403_20260324.csv
+2026-03-24 19:38:15,486  INFO        ✓  11308 rows — OK
+2026-03-24 19:38:16,099  INFO      [4H]  Resampled from 1H → data/raw/COMEX_GCF_4H_20240403_20260324.csv
+2026-03-24 19:38:16,107  INFO        ✓  3064 rows — OK
+2026-03-24 19:38:17,107  INFO      ============================================================
+2026-03-24 19:38:17,107  INFO      Instrument: CL=F  [NYMEX]
+2026-03-24 19:38:17,107  INFO      [DL]   CL=F — 1D — 1d
+2026-03-24 19:38:21,811  INFO        → Saved: data/raw/NYMEX_CLF_1D_20150101_20260324.csv
+2026-03-24 19:38:21,816  INFO        ✓  2822 rows — OK
+2026-03-24 19:38:22,316  INFO      [DL]   CL=F — 1W — 1wk
+2026-03-24 19:38:22,439  INFO        → Saved: data/raw/NYMEX_CLF_1W_20150101_20260324.csv
+2026-03-24 19:38:22,442  INFO        ✓  586 rows — OK
+2026-03-24 19:38:22,942  INFO      [DL]   CL=F — 1H — 1h
+2026-03-24 19:38:23,351  INFO        → Saved: data/raw/NYMEX_CLF_1H_20240403_20260324.csv
+2026-03-24 19:38:23,365  INFO        ✓  11069 rows — OK
+2026-03-24 19:38:23,953  INFO      [4H]  Resampled from 1H → data/raw/NYMEX_CLF_4H_20240403_20260324.csv
+2026-03-24 19:38:23,959  INFO        ✓  3025 rows — OK
+2026-03-24 19:38:24,959  INFO      ============================================================
+2026-03-24 19:38:24,959  INFO      Instrument: BZ=F  [ICE]
+2026-03-24 19:38:24,959  INFO      [DL]   BZ=F — 1D — 1d
+2026-03-24 19:38:25,153  INFO        → Saved: data/raw/ICE_BZF_1D_20150101_20260324.csv
+2026-03-24 19:38:25,157  INFO        ✓  2823 rows — OK
+2026-03-24 19:38:25,658  INFO      [DL]   BZ=F — 1W — 1wk
+2026-03-24 19:38:25,755  INFO        → Saved: data/raw/ICE_BZF_1W_20150101_20260324.csv
+2026-03-24 19:38:25,757  INFO        ✓  586 rows — OK
+2026-03-24 19:38:26,257  INFO      [DL]   BZ=F — 1H — 1h
+2026-03-24 19:38:26,728  INFO        → Saved: data/raw/ICE_BZF_1H_20240403_20260324.csv
+2026-03-24 19:38:26,742  INFO        ✓  11187 rows — OK
+2026-03-24 19:38:27,342  INFO      [4H]  Resampled from 1H → data/raw/ICE_BZF_4H_20240403_20260324.csv
+2026-03-24 19:38:27,347  INFO        ✓  3044 rows — OK
+2026-03-24 19:38:28,348  INFO      ============================================================
+2026-03-24 19:38:28,348  INFO      Instrument: NG=F  [NYMEX]
+2026-03-24 19:38:28,348  INFO      [DL]   NG=F — 1D — 1d
+2026-03-24 19:38:28,619  INFO        → Saved: data/raw/NYMEX_NGF_1D_20150101_20260324.csv
+2026-03-24 19:38:28,667  INFO        ✓  2823 rows — OK
+2026-03-24 19:38:29,169  INFO      [DL]   NG=F — 1W — 1wk
+2026-03-24 19:38:29,306  INFO        → Saved: data/raw/NYMEX_NGF_1W_20150101_20260324.csv
+2026-03-24 19:38:29,307  INFO        ✓  586 rows — OK
+2026-03-24 19:38:29,808  INFO      [DL]   NG=F — 1H — 1h
+2026-03-24 19:38:30,261  INFO        → Saved: data/raw/NYMEX_NGF_1H_20240403_20260324.csv
+2026-03-24 19:38:30,277  INFO        ✓  10946 rows — OK
+2026-03-24 19:38:30,862  INFO      [4H]  Resampled from 1H → data/raw/NYMEX_NGF_4H_20240403_20260324.csv
+2026-03-24 19:38:30,867  INFO        ✓  2985 rows — OK
+2026-03-24 19:38:31,867  INFO      ============================================================
+2026-03-24 19:38:31,868  INFO      Instrument: ZW=F  [CBOT]
+2026-03-24 19:38:31,868  INFO      [DL]   ZW=F — 1D — 1d
+2026-03-24 19:38:32,058  INFO        → Saved: data/raw/CBOT_ZWF_1D_20150101_20260324.csv
+2026-03-24 19:38:32,062  INFO        ✓  2821 rows — OK
+2026-03-24 19:38:32,562  INFO      [DL]   ZW=F — 1W — 1wk
+2026-03-24 19:38:32,647  INFO        → Saved: data/raw/CBOT_ZWF_1W_20150101_20260324.csv
+2026-03-24 19:38:32,648  INFO        ✓  586 rows — OK
+2026-03-24 19:38:33,149  INFO      [DL]   ZW=F — 1H — 1h
+2026-03-24 19:38:33,540  INFO        → Saved: data/raw/CBOT_ZWF_1H_20240403_20260324.csv
+2026-03-24 19:38:33,553  INFO        ✓  9177 rows — OK
+2026-03-24 19:38:34,118  INFO      [4H]  Resampled from 1H → data/raw/CBOT_ZWF_4H_20240403_20260324.csv
+2026-03-24 19:38:34,122  INFO        ✓  2426 rows — OK
+2026-03-24 19:38:35,122  INFO      ============================================================
+2026-03-24 19:38:35,123  INFO      Instrument: HG=F  [COMEX]
+2026-03-24 19:38:35,123  INFO      [DL]   HG=F — 1D — 1d
+2026-03-24 19:38:35,470  INFO        → Saved: data/raw/COMEX_HGF_1D_20150101_20260324.csv
+2026-03-24 19:38:35,479  INFO        ✓  2822 rows — OK
+2026-03-24 19:38:35,980  INFO      [DL]   HG=F — 1W — 1wk
+2026-03-24 19:38:36,113  INFO        → Saved: data/raw/COMEX_HGF_1W_20150101_20260324.csv
+2026-03-24 19:38:36,115  INFO        ✓  586 rows — OK
+2026-03-24 19:38:36,615  INFO      [DL]   HG=F — 1H — 1h
+2026-03-24 19:38:37,050  INFO        → Saved: data/raw/COMEX_HGF_1H_20240403_20260324.csv
+2026-03-24 19:38:37,065  INFO        ✓  11304 rows — OK
+2026-03-24 19:38:37,690  INFO      [4H]  Resampled from 1H → data/raw/COMEX_HGF_4H_20240403_20260324.csv
+2026-03-24 19:38:37,696  INFO        ✓  3064 rows — OK
+2026-03-24 19:38:38,696  INFO      ============================================================
+2026-03-24 19:38:38,696  INFO      Instrument: SI=F  [COMEX]
+2026-03-24 19:38:38,697  INFO      [DL]   SI=F — 1D — 1d
+2026-03-24 19:38:38,854  INFO        → Saved: data/raw/COMEX_SIF_1D_20150101_20260324.csv
+2026-03-24 19:38:38,859  INFO        ✓  2821 rows — OK
+2026-03-24 19:38:39,359  INFO      [DL]   SI=F — 1W — 1wk
+2026-03-24 19:38:39,463  INFO        → Saved: data/raw/COMEX_SIF_1W_20150101_20260324.csv
+2026-03-24 19:38:39,466  INFO        ✓  586 rows — OK
+2026-03-24 19:38:39,966  INFO      [DL]   SI=F — 1H — 1h
+2026-03-24 19:38:40,382  INFO        → Saved: data/raw/COMEX_SIF_1H_20240403_20260324.csv
+2026-03-24 19:38:40,397  INFO        ✓  11306 rows — OK
+2026-03-24 19:38:40,989  INFO      [4H]  Resampled from 1H → data/raw/COMEX_SIF_4H_20240403_20260324.csv
+2026-03-24 19:38:40,994  INFO        ✓  3064 rows — OK
+2026-03-24 19:38:41,994  INFO      ============================================================
+2026-03-24 19:38:41,994  INFO      Instrument: ^GSPC  [SP500]
+2026-03-24 19:38:41,995  INFO      [DL]   ^GSPC — 1D — 1d
+2026-03-24 19:38:42,147  INFO        → Saved: data/raw/SP500_GSPC_1D_20150101_20260324.csv
+2026-03-24 19:38:42,151  INFO        ✓  2821 rows — OK
+2026-03-24 19:38:42,651  INFO      [DL]   ^GSPC — 1W — 1wk
+2026-03-24 19:38:42,735  INFO        → Saved: data/raw/SP500_GSPC_1W_20150101_20260324.csv
+2026-03-24 19:38:42,737  INFO        ✓  586 rows — OK
+2026-03-24 19:38:43,237  INFO      [DL]   ^GSPC — 1H — 1h
+2026-03-24 19:38:43,446  INFO        → Saved: data/raw/SP500_GSPC_1H_20240403_20260324.csv
+2026-03-24 19:38:43,450  INFO        ✓  3434 rows — OK
+2026-03-24 19:38:43,988  INFO      [4H]  Resampled from 1H → data/raw/SP500_GSPC_4H_20240403_20260324.csv
+2026-03-24 19:38:43,991  INFO        ✓  1151 rows — OK
+2026-03-24 19:38:44,992  INFO      ============================================================
+2026-03-24 19:38:44,992  INFO      Instrument: ^GDAXI  [DAX]
+2026-03-24 19:38:44,992  INFO      [DL]   ^GDAXI — 1D — 1d
+2026-03-24 19:38:45,274  INFO        → Saved: data/raw/DAX_GDAXI_1D_20150101_20260324.csv
+2026-03-24 19:38:45,278  INFO        ✓  2847 rows — OK
+2026-03-24 19:38:45,778  INFO      [DL]   ^GDAXI — 1W — 1wk
+2026-03-24 19:38:45,888  INFO        → Saved: data/raw/DAX_GDAXI_1W_20150101_20260324.csv
+2026-03-24 19:38:45,902  INFO        ✓  587 rows — OK
+2026-03-24 19:38:46,403  INFO      [DL]   ^GDAXI — 1H — 1h
+2026-03-24 19:38:46,652  INFO        → Saved: data/raw/DAX_GDAXI_1H_20240403_20260324.csv
+2026-03-24 19:38:46,658  INFO        ✓  4498 rows — OK
+2026-03-24 19:38:47,200  INFO      [4H]  Resampled from 1H → data/raw/DAX_GDAXI_4H_20240403_20260324.csv
+2026-03-24 19:38:47,203  INFO        ✓  1504 rows — OK
+2026-03-24 19:38:48,204  INFO      ============================================================
+2026-03-24 19:38:48,204  INFO      Instrument: ^N225  [NIKKEI]
+2026-03-24 19:38:48,204  INFO      [DL]   ^N225 — 1D — 1d
+2026-03-24 19:38:48,360  INFO        → Saved: data/raw/NIKKEI_N225_1D_20150101_20260324.csv
+2026-03-24 19:38:48,364  INFO        ✓  2740 rows — OK
+2026-03-24 19:38:48,864  INFO      [DL]   ^N225 — 1W — 1wk
+2026-03-24 19:38:50,018  INFO        → Saved: data/raw/NIKKEI_N225_1W_20150101_20260324.csv
+2026-03-24 19:38:50,020  INFO        ✓  585 rows — OK
+2026-03-24 19:38:50,520  INFO      [DL]   ^N225 — 1H — 1h
+2026-03-24 19:38:50,742  INFO        → Saved: data/raw/NIKKEI_N225_1H_20240403_20260324.csv
+2026-03-24 19:38:50,747  INFO        ✓  3348 rows — OK
+2026-03-24 19:38:51,309  INFO      [4H]  Resampled from 1H → data/raw/NIKKEI_N225_4H_20240403_20260324.csv
+2026-03-24 19:38:51,313  INFO        ✓  960 rows — OK
+2026-03-24 19:38:52,314  INFO      ============================================================
+2026-03-24 19:38:52,314  INFO      Instrument: ^FTSE  [FTSE]
+2026-03-24 19:38:52,315  INFO      [DL]   ^FTSE — 1D — 1d
+2026-03-24 19:38:52,511  INFO        → Saved: data/raw/FTSE_FTSE_1D_20150101_20260324.csv
+2026-03-24 19:38:52,515  INFO        ✓  2835 rows — OK
+2026-03-24 19:38:53,015  INFO      [DL]   ^FTSE — 1W — 1wk
+2026-03-24 19:38:53,106  INFO        → Saved: data/raw/FTSE_FTSE_1W_20150101_20260324.csv
+2026-03-24 19:38:53,108  INFO        ✓  586 rows — OK
+2026-03-24 19:38:53,609  INFO      [DL]   ^FTSE — 1H — 1h
+2026-03-24 19:38:53,833  INFO        → Saved: data/raw/FTSE_FTSE_1H_20240403_20260324.csv
+2026-03-24 19:38:53,838  INFO        ✓  4477 rows — OK
+2026-03-24 19:38:54,381  INFO      [4H]  Resampled from 1H → data/raw/FTSE_FTSE_4H_20240403_20260324.csv
+2026-03-24 19:38:54,384  INFO        ✓  1492 rows — OK
+2026-03-24 19:38:55,385  INFO      ============================================================
+2026-03-24 19:38:55,385  INFO      Instrument: ^HSI  [HSI]
+2026-03-24 19:38:55,385  INFO      [DL]   ^HSI — 1D — 1d
+2026-03-24 19:38:55,552  INFO        → Saved: data/raw/HSI_HSI_1D_20150101_20260324.csv
+2026-03-24 19:38:55,556  INFO        ✓  2760 rows — OK
+2026-03-24 19:38:56,056  INFO      [DL]   ^HSI — 1W — 1wk
+2026-03-24 19:38:56,169  INFO        → Saved: data/raw/HSI_HSI_1W_20150101_20260324.csv
+2026-03-24 19:38:56,171  INFO        ✓  587 rows — OK
+2026-03-24 19:38:56,671  INFO      [DL]   ^HSI — 1H — 1h
+2026-03-24 19:38:56,864  INFO        → Saved: data/raw/HSI_HSI_1H_20240403_20260324.csv
+2026-03-24 19:38:56,869  INFO        ✓  3352 rows — OK
+2026-03-24 19:38:57,403  INFO      [4H]  Resampled from 1H → data/raw/HSI_HSI_4H_20240403_20260324.csv
+2026-03-24 19:38:57,406  INFO        ✓  961 rows — OK
+2026-03-24 19:38:58,406  INFO      ============================================================
+2026-03-24 19:38:58,406  INFO      Instrument: BTC-USD  [CRYPTO]
+2026-03-24 19:38:58,406  INFO      [DL]   BTC-USD — 1D — 1d
+2026-03-24 19:38:58,593  INFO        → Saved: data/raw/CRYPTO_BTC-USD_1D_20150101_20260324.csv
+2026-03-24 19:38:58,598  INFO        ✓  4101 rows — OK
+2026-03-24 19:38:59,099  INFO      [DL]   BTC-USD — 1W — 1wk
+2026-03-24 19:38:59,180  INFO        → Saved: data/raw/CRYPTO_BTC-USD_1W_20150101_20260324.csv
+2026-03-24 19:38:59,182  INFO        ✓  586 rows — OK
+2026-03-24 19:38:59,682  INFO      [DL]   BTC-USD — 1H — 1h
+2026-03-24 19:39:00,180  INFO        → Saved: data/raw/CRYPTO_BTC-USD_1H_20240403_20260324.csv
+2026-03-24 19:39:00,212  INFO        ✓  17124 rows — OK
+2026-03-24 19:39:00,831  INFO      [4H]  Resampled from 1H → data/raw/CRYPTO_BTC-USD_4H_20240403_20260324.csv
+2026-03-24 19:39:00,838  INFO        ✓  4284 rows — OK
+2026-03-24 19:39:01,838  INFO      ============================================================
+2026-03-24 19:39:01,839  INFO      Instrument: ETH-USD  [CRYPTO]
+2026-03-24 19:39:01,839  INFO      [DL]   ETH-USD — 1D — 1d
+2026-03-24 19:39:02,018  INFO        → Saved: data/raw/CRYPTO_ETH-USD_1D_20150101_20260324.csv
+2026-03-24 19:39:02,022  INFO        ✓  3058 rows — OK
+2026-03-24 19:39:02,523  INFO      [DL]   ETH-USD — 1W — 1wk
+2026-03-24 19:39:02,604  INFO        → Saved: data/raw/CRYPTO_ETH-USD_1W_20150101_20260324.csv
+2026-03-24 19:39:02,606  INFO        ✓  438 rows — OK
+2026-03-24 19:39:03,106  INFO      [DL]   ETH-USD — 1H — 1h
+2026-03-24 19:39:03,587  INFO        → Saved: data/raw/CRYPTO_ETH-USD_1H_20240403_20260324.csv
+2026-03-24 19:39:03,607  INFO        ✓  17124 rows — OK
+2026-03-24 19:39:04,231  INFO      [4H]  Resampled from 1H → data/raw/CRYPTO_ETH-USD_4H_20240403_20260324.csv
+2026-03-24 19:39:04,238  INFO        ✓  4284 rows — OK
+2026-03-24 19:39:05,238  INFO      ============================================================
+2026-03-24 19:39:05,239  INFO      Collection complete.
+2026-03-24 19:39:05,239  INFO        Instruments attempted : 59
+2026-03-24 19:39:05,239  INFO        Successful            : 59
+2026-03-24 19:39:05,239  INFO        Failed / skipped      : none
+2026-03-24 19:39:05,239  INFO      CSVs saved to           : /workspaces/congenial-chainsaw/data/raw
+2026-03-24 19:39:05,239  INFO      
+Files by resolution:
+2026-03-24 19:39:05,239  INFO        1D   : 59 files
+2026-03-24 19:39:05,240  INFO        1H   : 59 files
+2026-03-24 19:39:05,240  INFO        1W   : 59 files
+2026-03-24 19:39:05,240  INFO        4H   : 59 files

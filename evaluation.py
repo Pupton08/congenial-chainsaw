@@ -49,7 +49,7 @@ SPLITS_DIR    = "data/splits"
 MODELS_BASE   = "models/base"
 LOG_DIR       = "logs/evaluation"
 LOOKBACK      = 60
-N_FEATURES    = 29
+N_FEATURES = 30
 HORIZONS      = [1, 5, 20]
 BATCH_SIZE    = 256
 
@@ -63,12 +63,12 @@ MIN_REGIME_ACC      = 0.51
 MAX_FOLD_SHARPE_STD = 0.4
 LEAKAGE_ACC_FLAG    = 0.60
 VAL_TEST_SHARPE_GAP = 0.5
-'''The first 5 steps have been done and the evaluations and position sizing scripts have been made but are still be perfected. I want you to add a part to the output that states the average number of candles per trades the average profit from each and stats like these. The 2 files added above are the evaluation and postposition sizing scripts.'''
+
 # Backtest / position sizing defaults
 STARTING_CAPITAL    = 10_000.0   # £10,000 — change to your actual capital
-KELLY_FRACTION      = 0.7        # half-Kelly
-MAX_RISK_PER_TRADE  = 0.03       # 2% of capital per trade
-MIN_PROB_THRESHOLD  = 0.54       # minimum confidence to trade
+KELLY_FRACTION      = 0.5        # half-Kelly
+MAX_RISK_PER_TRADE  = 0.02       # 2% of capital per trade
+MIN_PROB_THRESHOLD  = 0.53       # minimum confidence to trade
 
 os.makedirs(LOG_DIR, exist_ok=True)
 logging.basicConfig(
@@ -162,6 +162,8 @@ def infer(model, loader, device):
     return ({h: np.array(dp[h]) for h in HORIZONS},
             {h: np.array(dt[h]) for h in HORIZONS},
             {h: np.array(mt[h]) for h in HORIZONS})
+
+
 
 
 # ─── Metrics ──────────────────────────────────────────────────────────────────
@@ -350,6 +352,7 @@ def report(m, label, val_sh=None):
     if valid: log.info("    -> %d/%d pass %.0f%%  %s", passing, valid, MIN_REGIME_ACC*100,
                         P if passing>=MIN_REGIME_PASS else F)
 
+
     log.info("\n  Calibration (H1):")
     for c, f in zip(m.get("cal_ctrs_h1",[]), m.get("cal_freqs_h1",[])):
         if not np.isnan(f): log.info("    p=%.2f -> %.3f  %s", c, f, "█"*int(f*20))
@@ -409,7 +412,7 @@ def report(m, label, val_sh=None):
         log.info("    Across instruments :  %d instruments, %.1f calendar years", n_inst, float(bt["n_years"]))
         log.info("    No-trade bars      :  %s  (prob < %.0f%%)", nnt_str, MIN_PROB_THRESHOLD*100)
         log.info("    Note: per-instrument frequency varies by resolution")
-        log.info("          (1D ≈ 252 signals/yr  4H ≈ 1575/yr  1H ≈ 6300/yr)")
+        log.info("          (1D ~252 signals/yr  4H ~1575/yr  1H ~6300/yr)")
 
     log.info("─" * 58)
     return ok

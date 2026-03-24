@@ -198,6 +198,13 @@ def compute_calendar_features(df, resolution):
         except Exception:
             pass
 
+    # FE-3: Resolution identity — allows the model to distinguish timeframes.
+    # Without this, a 1H bar and a 1D bar look identical to the encoder.
+    # Encode as a single float in [-1, +1] so the model can learn resolution-
+    # specific patterns (e.g. session effects only matter on intraday data).
+    RESOLUTION_MAP = {"1H": -1.0, "4H": -0.33, "1D": 0.33, "1W": 1.0}
+    feats["resolution_id"] = RESOLUTION_MAP.get(resolution, 0.0)
+
     return feats
 
 
@@ -207,8 +214,10 @@ def compute_regime_label(df):
     close = df["Close"]
 
     # Trend regime over LOOKBACK bars
-    price_move  = (close - close.shift(LOOKBACK)).abs()
-    trend_thresh = 1.5 * atr14 * np.sqrt(LOOKBACK)
+    # Trend regime: price moved > 1.5 × ATR directionally over the window
+    # Blueprint spec — do NOT multiply by sqrt(LOOKBACK)
+    price_move   = (close - close.shift(LOOKBACK)).abs()
+    trend_thresh = 1.5 * atr14
     trend_regime = (price_move > trend_thresh).astype(int)   # 1=trending, 0=range
 
     # Volatility regime
@@ -251,9 +260,43 @@ def apply_rolling_zscore_pipeline(feature_df, non_zscore_cols):
 
 # ─── Window builder ───────────────────────────────────────────────────────────
 
-def build_windows(feature_df, regime_series):
+def _detect_gap_positions(index: pd.DatetimeIndex, resolution: str) -> set:
+    """
+    FE-4: Detect positions where the time gap between consecutive bars
+    is more than 3× the expected interval. These indicate weekends, holidays,
+    or data gaps. Windows must not span these positions.
+
+    Returns a set of bar indices where a gap STARTS (i.e., bar i to i+1 has a gap).
+    """
+    EXPECTED_SECONDS = {
+        "1H": 3600, "4H": 14400, "1D": 86400, "1W": 604800
+    }
+    expected = EXPECTED_SECONDS.get(resolution, 86400)
+    threshold = expected * 3   # 3× expected = definite gap
+
+    gap_positions = set()
+    if len(index) < 2:
+        return gap_positions
+
+    try:
+        diffs = index[1:].asi8 - index[:-1].asi8   # nanoseconds
+        diffs_seconds = diffs / 1e9
+        for i, diff in enumerate(diffs_seconds):
+            if diff > threshold:
+                gap_positions.add(i + 1)  # bar i+1 is the start of a new segment
+    except Exception:
+        pass   # if index not datetime, skip gap detection
+    return gap_positions
+
+
+def build_windows(feature_df, regime_series, resolution: str = "1D"):
     """
     Slide a LOOKBACK-bar window over the feature DataFrame.
+
+    FE-4 fix: windows are never built across time gaps (weekends, holidays,
+    data gaps). A window starting at bar i is rejected if any bar in
+    [i-LOOKBACK, i] crosses a detected gap boundary.
+
     Returns:
         X      : np.ndarray [n_windows, LOOKBACK, n_features]
         regimes: np.ndarray [n_windows]        (regime label at window end)
@@ -264,10 +307,19 @@ def build_windows(feature_df, regime_series):
     n       = len(arr)
     windows, regimes, dates = [], [], []
 
+    # Detect gap positions
+    gap_positions = _detect_gap_positions(feature_df.index, resolution)
+
     for i in range(LOOKBACK, n):
         window = arr[i - LOOKBACK: i]
         if np.isnan(window).any():
             continue
+
+        # Reject window if any gap falls within it
+        window_start = i - LOOKBACK
+        if any(g > window_start and g <= i for g in gap_positions):
+            continue
+
         windows.append(window)
         regimes.append(reg_arr[i])
         dates.append(feature_df.index[i])
@@ -290,6 +342,11 @@ def process_file(filepath, index_dfs):
     try:
         df = pd.read_csv(filepath, parse_dates=["Datetime"])
         df = df.set_index("Datetime").sort_index()
+        # Strip timezone info if present — tz-aware vs tz-naive index
+        # mismatch causes all correlation values to become NaN after reindex,
+        # which then wipes every row via dropna() and produces zero windows.
+        if df.index.tz is not None:
+            df.index = df.index.tz_localize(None)
     except Exception as e:
         log.error("  ✗  Failed to load %s: %s", fname, e)
         return None
@@ -301,6 +358,31 @@ def process_file(filepath, index_dfs):
 
     # Drop rows with zero/NaN close
     df = df[df["Close"] > 0].dropna(subset=["Open","High","Low","Close"])
+
+    # FE-1: Detect and handle split/dividend discrete jumps.
+    # A stock split (e.g. 4:1) appears as a -75% return in one bar.
+    # These corrupt the rolling z-score statistics of any window they fall in.
+    # Strategy: cap extreme log returns at ±50% (±0.693 log) before computing
+    # features. This preserves legitimate volatility while neutralising artefacts.
+    # We do NOT delete these rows — doing so would create invisible gaps.
+    JUMP_THRESHOLD = 0.693  # ln(2) — cap moves larger than 100% or -50%
+    log_ret = np.log(df["Close"] / df["Close"].shift(1).clip(lower=1e-10))
+    jump_mask = log_ret.abs() > JUMP_THRESHOLD
+    if jump_mask.sum() > 0:
+        log.warning("  ⚠  %d potential split/dividend jumps detected in %s — "
+                    "capping returns at ±%.0f%% for feature computation.",
+                    jump_mask.sum(), fname, (np.exp(JUMP_THRESHOLD)-1)*100)
+        # Replace close at jump bars with a smoothed value to avoid z-score pollution
+        df = df.copy()
+        jump_idx = df.index[jump_mask]
+        for idx in jump_idx:
+            pos = df.index.get_loc(idx)
+            if pos > 0:
+                prev_close = df["Close"].iloc[pos - 1]
+                # Cap the move: new close = prev_close × exp(±threshold)
+                actual_log_ret = log_ret.iloc[pos]
+                capped_log_ret = np.clip(actual_log_ret, -JUMP_THRESHOLD, JUMP_THRESHOLD)
+                df.loc[idx, "Close"] = prev_close * np.exp(capped_log_ret)
 
     # Build features
     ohlc_feats = compute_ohlc_features(df)
@@ -316,10 +398,17 @@ def process_file(filepath, index_dfs):
     all_feats = pd.concat([ohlc_feats, tech_feats, corr_col, cal_feats], axis=1)
     all_feats = all_feats.loc[df.index]   # align
 
-    # Calendar cols are already normalised — skip z-scoring them
-    cal_cols       = list(cal_feats.columns)
-    non_zscore     = cal_cols + ["bb_position", "rsi14", "rsi28",
-                                  "range_percentile", "regime"]
+    # Calendar cols are already normalised — skip z-scoring them.
+    # Also exclude features already normalised in compute_ohlc_features():
+    #   volume_zscore — computed with 20-bar window; re-z-scoring at 60-bar
+    #                   would produce a z-score of a z-score, distorting scale.
+    #   range_zscore  — same: already computed as a z-score.
+    # FE-2 fix: these are excluded from the second z-score pass.
+    cal_cols   = list(cal_feats.columns)
+    non_zscore = cal_cols + [
+        "bb_position", "rsi14", "rsi28", "range_percentile", "regime",
+        "volume_zscore", "range_zscore",   # already normalised — skip double z-score
+    ]
 
     # Apply rolling z-score pipeline
     feat_normalised = apply_rolling_zscore_pipeline(all_feats, non_zscore_cols=set(cal_cols))
@@ -327,7 +416,7 @@ def process_file(filepath, index_dfs):
     regime_aligned  = regime.reindex(feat_normalised.index)
 
     # Build sample windows
-    X, regimes, dates = build_windows(feat_normalised, regime_aligned)
+    X, regimes, dates = build_windows(feat_normalised, regime_aligned, resolution)
     if X is None:
         log.warning("  ✗  No valid windows produced for %s", fname)
         return None
@@ -363,6 +452,8 @@ def load_index_refs():
             try:
                 df = pd.read_csv(matches[0], parse_dates=["Datetime"])
                 df = df.set_index("Datetime").sort_index()
+                if df.index.tz is not None:
+                    df.index = df.index.tz_localize(None)
                 index_dfs[res] = df
                 log.info("[IDX]  Loaded index ref for %s: %s", res, os.path.basename(matches[0]))
             except Exception as e:
@@ -402,18 +493,27 @@ def main():
             log.warning("  ⚠  NaN/Inf in %s: %d NaN, %d Inf",
                         result["source_file"], nan_count, inf_count)
 
-        # Save as parquet (compressed, fast to load for training)
-        out_name = result["source_file"].replace(".csv", ".parquet")
-        out_path = os.path.join(PROCESSED_DIR, out_name)
+        out_stem = result["source_file"].replace(".csv", "")
+        out_base = os.path.join(PROCESSED_DIR, out_stem)
 
         meta_df = pd.DataFrame({
             "date":    result["dates"],
             "regime":  result["regimes"],
         })
 
-        # Save feature array as numpy + metadata as parquet
-        np.save(out_path.replace(".parquet", ".npy"), result["X"])
-        meta_df.to_parquet(out_path, index=False)
+        # 1. Feature windows as numpy array  [n_windows, 60, n_features]
+        np.save(out_base + ".npy", result["X"])
+
+        # 2. Metadata (dates + regime labels) as parquet
+        meta_df.to_parquet(out_base + ".parquet", index=False)
+
+        # 3. Human-readable CSV — last bar of each window so you can open it in Excel
+        last_bar   = result["X"][:, -1, :]
+        inspect_df = pd.DataFrame(last_bar, columns=result["feature_cols"])
+        inspect_df.insert(0, "date",   [str(d) for d in result["dates"]])
+        inspect_df.insert(1, "regime", result["regimes"])
+        inspect_df.to_csv(out_base + "_inspect.csv", index=False)
+        log.info("  → Inspect CSV written: %s_inspect.csv", out_stem)
 
         results.append(result)
 

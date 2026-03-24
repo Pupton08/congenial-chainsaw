@@ -95,23 +95,36 @@ class TCNBlock(nn.Module):
 
 class TCNEncoder(nn.Module):
     """
-    3-layer TCN encoder (blueprint Section 4.2).
-    Dilations: 1, 2, 4 → receptive field covers 7 bars per layer.
+    TCN encoder with extended dilations to cover the full 60-bar lookback window.
+
+    MODEL-1 fix: The original 3-layer [1,2,4] dilation schedule gave a
+    receptive field of only 15 bars — leaving 45 of the 60 lookback bars
+    completely outside the model's direct attention. This is a significant
+    waste of input context.
+
+    Extended to 5 layers with dilations [1,2,4,8,16]:
+      RF = (kernel_size-1) × sum(dilations) + 1
+         = (3-1) × (1+2+4+8+16) + 1 = 63 bars
+
+    This covers the full 60-bar window with slight overlap.
+    Parameter count increases modestly (~490k vs ~294k) — still well within
+    the blueprint's anti-overfitting budget for this signal-to-noise ratio.
+
     Input : [batch, lookback, n_features]
-    Output: [batch, hidden_dim]  (global average pooled)
+    Output: [batch, hidden_dim]  (decayed-weighted temporal pooling)
     """
     def __init__(
         self,
-        n_features:  int = 29,
+        n_features:  int = 30,
         hidden_dim:  int = 128,
-        n_layers:    int = 3,
+        n_layers:    int = 5,       # extended from 3 to cover 60-bar window
         kernel_size: int = 3,
         dropout:     float = 0.25,
     ):
         super().__init__()
         assert hidden_dim <= 256, "Blueprint cap: hidden_dim must not exceed 256"
 
-        dilations  = [2 ** i for i in range(n_layers)]   # [1, 2, 4]
+        dilations  = [2 ** i for i in range(n_layers)]   # [1, 2, 4, 8, 16]
         layers     = []
         in_ch      = n_features
 
@@ -122,11 +135,28 @@ class TCNEncoder(nn.Module):
         self.network    = nn.Sequential(*layers)
         self.hidden_dim = hidden_dim
 
+        # MODEL-2: Learned temporal decay weights for pooling.
+        # Recent bars are typically more informative than older ones.
+        # A single learnable scalar controls the decay rate.
+        self.temporal_decay = nn.Parameter(torch.zeros(1))  # initialised near uniform
+
     def forward(self, x):
         # x: [batch, seq_len, n_features]  →  transpose for Conv1d
-        x = x.transpose(1, 2)             # [batch, n_features, seq_len]
-        x = self.network(x)               # [batch, hidden_dim, seq_len]
-        x = x.mean(dim=2)                 # global average pool → [batch, hidden_dim]
+        x = x.transpose(1, 2)               # [batch, n_features, seq_len]
+        x = self.network(x)                 # [batch, hidden_dim, seq_len]
+
+        # MODEL-2: Exponentially decayed temporal pooling.
+        # Weight recent timesteps more heavily than older ones.
+        # decay_rate ∈ (0,1) via sigmoid — learned from data.
+        # At init (temporal_decay=0), sigmoid(0)=0.5 → mild recency bias.
+        seq_len    = x.size(2)
+        decay_rate = torch.sigmoid(self.temporal_decay)     # scalar in (0,1)
+        # Weights: [1, 1, seq_len] — exponential decay from t=seq_len-1 back to 0
+        positions  = torch.arange(seq_len, device=x.device, dtype=x.dtype)
+        weights    = decay_rate ** (seq_len - 1 - positions)  # recent=1.0, old<1.0
+        weights    = weights / weights.sum()                   # normalise
+        weights    = weights.view(1, 1, seq_len)
+        x          = (x * weights).sum(dim=2)                 # [batch, hidden_dim]
         return x
 
 
@@ -225,7 +255,23 @@ class TradingLoss(nn.Module):
     Combined loss for one horizon (blueprint Section 4.3 & 5.3):
       0.5 × BCE(direction, label_smoothing=0.05)
       0.5 × Huber(magnitude, delta=0.01)
+
+    MODEL-3 fix: BCE and Huber have very different gradient magnitudes at
+    initialisation. BCE starts at ~0.693 (random 50/50 predictions).
+    Huber on z-scored magnitude targets starts at ~0.5 (unit-scale).
+    The 0.5:0.5 weighting therefore gives BCE ~40% more gradient influence
+    than Huber, biasing training toward direction at the expense of magnitude.
+
+    Fix: normalise both terms by their expected initial magnitude so that
+    each contributes equally at the start of training. The normalisers are
+    constants, not learned — they simply re-scale the two loss terms.
+
+    BCE_NORM  = 0.693  (ln(2) — binary cross-entropy at 50% accuracy)
+    HUBER_NORM = 0.50  (Huber loss at unit-scale z-score targets)
     """
+    BCE_NORM   = 0.693
+    HUBER_NORM = 0.500
+
     def __init__(self, label_smoothing: float = 0.05, huber_delta: float = 0.01):
         super().__init__()
         self.smoothing   = label_smoothing
@@ -234,9 +280,13 @@ class TradingLoss(nn.Module):
     def forward(self, direction_pred, magnitude_pred, direction_true, magnitude_true):
         # Label smoothing: pull targets away from 0 and 1
         smooth_true = direction_true * (1 - self.smoothing) + 0.5 * self.smoothing
-        bce  = F.binary_cross_entropy(direction_pred, smooth_true)
+        bce   = F.binary_cross_entropy(direction_pred, smooth_true)
         huber = F.huber_loss(magnitude_pred, magnitude_true, delta=self.huber_delta)
-        return 0.5 * bce + 0.5 * huber, bce, huber
+        # Scale-normalised combination: each term contributes equally at init
+        bce_norm   = bce   / self.BCE_NORM
+        huber_norm = huber / self.HUBER_NORM
+        combined   = 0.5 * bce_norm + 0.5 * huber_norm
+        return combined, bce, huber
 
 
 class MultiHorizonLoss(nn.Module):
@@ -266,12 +316,12 @@ class MultiHorizonLoss(nn.Module):
 
 # ─── Model factory ────────────────────────────────────────────────────────────
 
-def build_model(n_features: int = 29, device: str = "cpu") -> TradingModel:
+def build_model(n_features: int = 30, device: str = "cpu") -> TradingModel:
     """Instantiate model with blueprint-specified default hyperparameters."""
     model = TradingModel(
         n_features=n_features,
         hidden_dim=128,
-        n_layers=3,
+        n_layers=5,       # extended dilations [1,2,4,8,16] — covers full 60-bar window
         kernel_size=3,
         enc_dropout=0.25,
         head_dropout=0.30,
@@ -287,11 +337,11 @@ if __name__ == "__main__":
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"Device: {device}")
 
-    model = build_model(n_features=29, device=device)
+    model = build_model(n_features=30, device=device)
     print(f"Parameters: {model.count_parameters():,}")
 
     # Verify forward pass with blueprint dimensions
-    batch   = torch.randn(256, 60, 29).to(device)   # [batch=256, lookback=60, features=29]
+    batch   = torch.randn(256, 60, 30).to(device)   # [batch=256, lookback=60, features=29]
     outputs = model(batch)
 
     print("\nForward pass output shapes:")

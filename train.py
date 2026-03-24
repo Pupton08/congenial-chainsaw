@@ -45,14 +45,14 @@ MODELS_DIR    = "models/base"
 LOG_DIR       = "logs/training"
 
 LOOKBACK      = 60
-N_FEATURES    = 29
+N_FEATURES = 30
 HORIZONS      = [1, 5, 20]
 BATCH_SIZE    = 256
 MAX_EPOCHS    = 200
 LR_INITIAL    = 3e-4
 LR_MIN        = 1e-5
 WARMUP_FRAC   = 0.05
-PATIENCE      = 20
+PATIENCE      = 10
 MIN_DELTA     = 0.0001
 GRAD_CLIP     = 1.0
 GAP_THRESHOLD = 0.15   # train/val loss gap halt condition

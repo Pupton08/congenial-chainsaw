@@ -47,7 +47,7 @@ MODELS_FT      = "models/fine_tuned"
 LOG_DIR        = "logs/finetune"
 
 LOOKBACK       = 60
-N_FEATURES     = 29
+N_FEATURES = 30
 HORIZONS       = [1, 5, 20]
 
 # Phase 1
